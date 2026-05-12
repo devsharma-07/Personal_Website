@@ -1,0 +1,13 @@
+{
+  "name": "awright-associates",
+  "version": "1.0.0",
+  "description": "A. Wright Associates — Strategic Dynamics",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {}
+}
