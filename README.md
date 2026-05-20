@@ -1,4 +1,4 @@
-# A. Wright Associates — Strategic Dynamics
+# Dev's Portfolio Website
 
 A clean, minimal professional website with animated geodesic globe, hover interactions, and a serverless contact form — ready to deploy on Vercel.
 
@@ -7,7 +7,7 @@ A clean, minimal professional website with animated geodesic globe, hover intera
 ## Project Structure
 
 ```
-awright-associates/
+Personal_Website
 ├── index.html          # Main page
 ├── style.css           # All styles
 ├── globe.js            # Animated rotating wireframe globe (Canvas 2D)

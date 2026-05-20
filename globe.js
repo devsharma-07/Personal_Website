@@ -72,8 +72,30 @@
     }
   }
 
-  // Find a few "highlight" vertices for the glowing dots
-  const dotIndices = [0, 1, 3, 5, 7, 8, 10, 11];
+  // Labeled highlight nodes — each dot has a connection label shown on the arc
+  const labeledNodes = [
+    { idx: 0,  label: "AI"   },
+    { idx: 1,  label: "Emotion"   },
+    { idx: 3,  label: "Design"    },
+    { idx: 5,  label: "Systems"   },
+    { idx: 7,  label: "Code"      },
+    { idx: 8,  label: "Strategy"  },
+    { idx: 10, label: "Research"  },
+    { idx: 11, label: "Product"   },
+  ];
+  const dotIndices = labeledNodes.map(n => n.idx);
+
+  // Pre-build pair → label map  e.g. "0_1" → "Emotion → Finance"
+  const pairLabels = {};
+  const allPairsStatic = [];
+  for (let i = 0; i < labeledNodes.length; i++) {
+    for (let j = i + 1; j < labeledNodes.length; j++) {
+      const a = labeledNodes[i], b = labeledNodes[j];
+      const key = Math.min(a.idx, b.idx) + '_' + Math.max(a.idx, b.idx);
+      pairLabels[key] = `${a.label} → ${b.label}`;
+      allPairsStatic.push([a.idx, b.idx]);
+    }
+  }
 
   // Animation timing for geodesic routes
   let animationTime = 0;
@@ -158,18 +180,10 @@
       return a[0]*b[0] + a[1]*b[1] + a[2]*b[2];
     }
 
-    // Build all possible dot pairs
-    const allPairs = [];
-    for (let i = 0; i < dotIndices.length; i++) {
-      for (let j = i + 1; j < dotIndices.length; j++) {
-        allPairs.push([dotIndices[i], dotIndices[j]]);
-      }
-    }
-
     // Determine which pair to draw based on animation time
     const cyclePosition = animationTime % cycleDuration;
-    const pairIndex = Math.floor(animationTime / cycleDuration) % allPairs.length;
-    const [idx1, idx2] = allPairs[pairIndex];
+    const pairIndex = Math.floor(animationTime / cycleDuration) % allPairsStatic.length;
+    const [idx1, idx2] = allPairsStatic[pairIndex];
     const v1 = transformed[idx1];
     const v2 = transformed[idx2];
 
@@ -221,6 +235,51 @@
         ctx.strokeStyle = `rgba(0, 0, 0, 0.5)`;
         ctx.lineWidth = 2;
         ctx.stroke();
+
+        // Draw connection label at the arc midpoint when fully drawn
+        if (drawProgress > 0.5) {
+          const labelAlpha = Math.min(1, (drawProgress - 0.5) * 2.5);
+          const midT = 0.5;
+          const midAngle = angle * midT;
+          const cosM = Math.cos(midAngle), sinM = Math.sin(midAngle);
+          const omcM = 1 - cosM;
+          const mp = [
+            v1[0]*cosM + (normalAxis[1]*v1[2] - normalAxis[2]*v1[1])*sinM + normalAxis[0]*dot(normalAxis,v1)*omcM,
+            v1[1]*cosM + (normalAxis[2]*v1[0] - normalAxis[0]*v1[2])*sinM + normalAxis[1]*dot(normalAxis,v1)*omcM,
+            v1[2]*cosM + (normalAxis[0]*v1[1] - normalAxis[1]*v1[0])*sinM + normalAxis[2]*dot(normalAxis,v1)*omcM,
+          ];
+          const mProj = project(mp, cx, cy, scale, fov);
+
+          const labelKey = Math.min(idx1,idx2) + '_' + Math.max(idx1,idx2);
+          const labelText = pairLabels[labelKey] || '';
+
+          ctx.save();
+          ctx.font = '600 11px "DM Sans", sans-serif';
+          ctx.letterSpacing = '0.06em';
+          const tw = ctx.measureText(labelText).width;
+
+          // Pill background
+          const pad = { x: 10, y: 5 };
+          const rx = mProj[0] - tw/2 - pad.x;
+          const ry = mProj[1] - 8 - pad.y;
+          const rw = tw + pad.x*2;
+          const rh = 16 + pad.y*2;
+          const rr = 20;
+
+          ctx.globalAlpha = labelAlpha * 0.88;
+          ctx.fillStyle = '#0d0d0d';
+          ctx.beginPath();
+          ctx.roundRect(rx, ry, rw, rh, rr);
+          ctx.fill();
+
+          // Label text
+          ctx.globalAlpha = labelAlpha;
+          ctx.fillStyle = '#f0ede8';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(labelText, mProj[0], mProj[1]);
+          ctx.restore();
+        }
       }
     }
 

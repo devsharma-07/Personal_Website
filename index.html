@@ -3,175 +3,876 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A. Wright Associates — Strategic Dynamics</title>
+  <title>Dev Sharma</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+<!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <p class="loader-belief" id="loaderBelief"></p>
+      <div id="loaderAttribution">Albert Einstein</div>
+      <div class="loader-name" id="loaderName">
+        <span>Dev</span><span>Sharma</span>
+      </div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar" id="loaderBar"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Top Bar -->
   <header class="topbar">
-    <span class="topbar-left">A. Wright Associates</span>
-    <span class="topbar-center">Cross-Disciplinary Innovation</span>
-    <span class="topbar-right">Protocol 2024</span>
+    <span class="topbar-left">
+      <a href="mailto:devsharma.us@gmail.com" class="topbar-email">devsharma.us@gmail.com</a>
+    </span>
+    <span class="topbar-right topbar-icons">
+      <a href="https://drive.google.com/file/d/1yERfhWQJ0auP_X0PdSzdigiBrrvwFxuD/view?usp=sharing" target="_blank" class="topbar-resume">Resume</a>
+      <a href="https://github.com/devsharma-07" target="_blank" class="topbar-icon" aria-label="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+      </a>
+      <a href="https://linkedin.com/in/-devsharma-" target="_blank" class="topbar-icon" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+    </span>
   </header>
 
   <!-- Main Content Card -->
   <div class="card">
 
     <!-- Nav -->
-    <nav class="nav">
-      <a href="#thesis" class="nav-link">Thesis</a>
-      <a href="#frameworks" class="nav-link">Frameworks</a>
-      <a href="#trajectory" class="nav-link">Trajectory</a>
-      <a href="#contact" class="nav-link">Contact</a>
+    <nav class="nav" id="mainNav">
+      <a href="#" class="hero-tagline-pill">Connecting the world, one idea at a time.</a>
+      <div class="nav-links">
+        <a href="#landingpage" class="nav-link">Home</a>
+        <a href="#aboutme" class="nav-link">About Me</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experiences" class="nav-link">Experiences</a>
+        <a href="#startup" class="nav-link">Startup Ventures</a>
+        <a href="#awards" class="nav-link">Awards</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="thesis">
+    <section class="hero" id="landingpage">
       <div class="hero-text">
-        <h3 class="hero-subheadline">i am</h3>
-        <h1 class="hero-headline">
-          <span class="word">Dev</span><br>
-          <span class="word">Sharma</span>
-        </h1>
+        <h3 class="hero-subheadline">i am <span class="cube-wrap"><span class="cube"><span class="cube-face face-1">inquisitive.</span><span class="cube-face face-2">imaginative.</span><span class="cube-face face-3">impact-driven.</span><span class="cube-face face-4">inquisitive.</span></span></span></h3>
+        <div class="hero-name-row">
+          <div class="hero-polaroid">
+            <img src="Dev.jpg" alt="Dev Sharma" />
+            <div class="hero-polaroid-caption">Building products that give a voice.</div>
+          </div>
+          <h1 class="hero-headline">
+            <span class="word">Dev</span><br>
+            <span class="word">Sharma</span>
+          </h1>
+        </div>
+        <div class="hero-credentials">
+          <p class="hero-tagline2">Business, Data Science, & CS</p>
+          <p class="hero-tagline3">Gies Scholar & James Scholar at the University of Illinois at Urbana-Champaign</p>
+        </div>
       </div>
       <div class="hero-globe">
         <canvas id="globe" width="700" height="700"></canvas>
       </div>
     </section>
 
-    <!-- Thesis Section -->
-    <section class="section" id="thesis-content">
-      <div class="section-label">Thesis</div>
+    <!-- Banner Image Section -->
+    <div class="banner-image">
+
+      <!-- 5 small stat boxes -->
+      <div class="stat-boxes">
+        <div class="stat-box">
+          <span class="stat-value">21+</span>
+          <span class="stat-label">Global Experiences</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-value">11+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-value">11+</span>
+          <span class="stat-label">Awards</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-value">3</span>
+          <span class="stat-label">Startup Ventures</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-value">∞</span>
+          <span class="stat-label">Curiosity</span>
+        </div>
+      </div>
+
+      <!-- 2 longer recognition boxes -->
+      <div class="recognition-boxes">
+        <div class="recognition-box">
+          <span class="recognition-label">Innovated with executives at</span>
+          <span class="recognition-content">Tata, UN, Amazon, Panduit, and World Relief</span>
+        </div>
+        <div class="recognition-box">
+          <span class="recognition-label">Nationally recognized by</span>
+          <span class="recognition-content">L'Oréal, Capital One, and George H.W. Bush Foundation</span>
+        </div>
+      </div>
+
+      <!-- Currently Thinking About -->
+      <div class="thinking-bar">
+        <span class="thinking-label">Currently thinking about...</span>
+        <span class="thinking-typed" id="thinkingTyped"></span>
+        <span class="thinking-cursor" id="thinkingCursor">|</span>
+        <a href="#gallery" class="thinking-cta">
+          <span class="thinking-cta-text">Check out what keeps me going.</span>
+          <span class="thinking-cta-arrow" aria-hidden="true">
+            <svg viewBox="0 0 220 18" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+              <line x1="0" y1="9" x2="218" y2="9" stroke="white" stroke-width="1.5"/>
+              <polyline points="208,2 218,9 208,16" fill="none" stroke="white" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- About Me Section -->
+    <section class="section" id="aboutme">
+      <div class="section-label">About Me</div>
       <div class="section-content">
+        <!-- Polaroid Photos -->
+        <div class="polaroid-cluster">
+          <div class="polaroid polaroid-back">
+            <img src="Photos/Photo15.jpg" alt="Dev Sharma" />
+            <div class="scatter-caption">Awarded 1st place for poetry & literary writing</div>
+          </div>
+          <div class="polaroid polaroid-front">
+            <img src="Photos/Photo3.jpg" alt="Dev Sharma" />
+            <div class="scatter-caption">Top 15 nationals pitch to L'Oréal executives</div>
+          </div>
+        </div>
         <div class="thesis-block">
+          <p class="thesis-text2">
+            I'm a data-minded collaborator powering products, operations, and teams with human stories. 
+          </p>
           <p class="thesis-text">
-            A. Wright Associates operates at the intersection of structural complexity and emergent market systems. We identify leverage points within cross-disciplinary domains and architect frameworks that convert ambiguity into executable strategy.
+            I build <strong>human-centered UX</strong> across regions and industries. whether it's <strong>deploying AR eyewear kiosks</strong>, scaling a fashion startup from <strong>zero to 30K+ revenue</strong> with international bridal bookings, or integrating CSR strategy improvements with <strong>Tata and the UN.</strong> I love translating complex systems, data, and cross-functional insights into <strong>intuitive end-user experiences</strong> that are lived and remembered.
           </p>
-          <p class="thesis-sub">
-            Our methodology is grounded in systems thinking, applied to real-world environments where conventional strategic models fail to account for non-linear dynamics.
+          <p class="thesis-text">
+            I take ownership of the discomfort that comes with <strong>executing ambitious ideas</strong>, from taking risks to <strong>quickly learning new skills from scratch</strong> (like coding this website).
           </p>
+        </div>
+      </div>
+      <!-- Scattered Gallery -->
+        <div class="photo-scatter">
+          <div class="scatter-photo sp-1">
+            <img src="Photos/Photo2.jpg" alt="Dev Sharma" />
+            <div class="scatter-caption">Pitching warehouse advancements to Amazon</div>
+          </div>
+          <div class="scatter-photo sp-2 horizontal">
+            <img src="Photos/Photo8.jpg" alt="Dev Sharma" />
+            <div class="scatter-caption">Impacting 8K+ by addressing unvoiced gaps with 28+ partners</div>
+          </div>
+          <div class="scatter-photo sp-3">
+            <img src="Photos/Photo7.jpg" alt="Dev Sharma" />
+            <div class="scatter-caption">Partnering with TATA for school & system improvements</div>
+          </div>
+          <div class="scatter-photo sp-4 horizontal">
+            <img src="Photos/Photo1.jpg" alt="Dev Sharma" />
+            <div class="scatter-caption">Pitching to 20+ investors to scale Jila, a startup supporting immigrants</div>
+          </div>
+          <div class="scatter-photo sp-5">
+            <img src="Photos/Photo12.jpg" alt="Dev Sharma" />
+            <div class="polaroid-caption">Building the future of UX in optometry with my FaceFrame team</div>
+          </div>
+        </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <div class="section-label">
+        Research &amp; Projects
+        <div class="projects-polaroids">
+          <div class="polaroid proj-polaroid-back">
+            <img src="Photos/Photo2.jpg" alt="Dev Sharma" />
+            <div class="polaroid-caption">Pitching warehouse advancements to Amazon</div>
+          </div>
+          <div class="polaroid proj-polaroid-middle">
+            <img src="Photos/Photo4.jpg" alt="Dev Sharma" />
+            <div class="polaroid-caption">Pitching a new L'Oréal fragrance synergizing microencapsulation and AI scalp tracking</div>
+          </div>
+          <div class="polaroid proj-polaroid-front">
+            <img src="Photos/Photo27.jpg" alt="Dev Sharma" />
+            <div class="polaroid-caption">Learning to build a website from scratch for my fashion startup, Dev Sharma Designs</div>
+          </div>
+        </div>
+      </div>
+      <div class="section-content">
+        <div class="projects-search-wrap">
+          <div class="projects-search-bar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="projectSearch" placeholder="Search by keyword, skill, or topic..." class="projects-search-input" />
+            <span class="projects-search-clear" id="searchClear">✕</span>
+          </div>
+          <div class="projects-tags">
+            <span class="ptag active" data-tag="all">All</span>
+            <span class="ptag" data-tag="strategy">Strategy</span>
+            <span class="ptag" data-tag="data">Data</span>
+            <span class="ptag" data-tag="product">Product</span>
+            <span class="ptag" data-tag="competition">Competition</span>
+            <span class="ptag" data-tag="analysis">Analysis</span>
+          </div>
+          <div class="entry-grid" id="projects-list">
+            <div class="entry" data-keywords="loreal brandstorm product competition strategy market entry semi-finalist beauty consumer top 15 20,000 20k participants nationally national portfolio analysis semi-finalist roadmapping sentiment analysis microencapsulation market gap analysis prompt engineering presentation design financial market analysis communication">
+              <div class="entry-left">
+                <span class="entry-tag">Top 15/20K+ Participants Nationally</span>
+                <h3 class="entry-title">Ambrosé — 2026 L'Oréal Brandstorm Product Competition Semi-finalist</h3>
+                <div class="entry-skill-tags">
+                  <span>Financial Market Analysis</span><span>GTM Strategy</span><span>Portfolio Analysis</span><span>Prompt Engineering</span><span>Product Roadmapping</span><span>Sentiment Analysis</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <ul class="entry-desc">
+                    <li>Developed hair styling fragrance with time-sensitive nutrient release and a sensor-enabled comb for scalp tracking</li>
+                    <li>Analyzed financial potential across L’Oréal’s markets to improve margins, project KPIs, and target portfolio gaps</li>
+                    <li>Outlined 10-year roadmap streamlining production with L’Oreal partners while conducting sentiment analysis</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="entry" data-keywords="capital one case competition finalist top 20 200+ 200 teams finance banking strategy finalist consulting regulatory compliance risk assessments market entry pilot SWOT analysis revenue forecasting projections UX design user experience portfolio analysis product strategy expansion pivot">
+              <div class="entry-left">
+                <span class="entry-tag">Top 20/200+ Teams</span>
+                <h3 class="entry-title">Capital AU — 2026 Capital One Case Competition Finalist</h3>
+                <div class="entry-skill-tags">
+                  <span>Portfolio Analysis</span><span>Regulatory Compliance</span><span>Risk Assessments</span><span>Market Entry</span><span>Pilot Launch</span><span>SWOT Analysis</span><span>Revenue Projections</span><span>UX Design</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <ul class="entry-desc">
+                    <li>Conducted market gap analysis of Capital One’s product portfolio, creating the Capital AU app to address Australia’s BNPL friction, low financial literacy, and institutional distrust</li>
+                    <li>Developed a pilot-to-launch and product strategy projected to scale revenue from $8M to $185M (23x growth) and capture 5% market share (~740K users) within 5 years</li>
+                    <li>Assessed risks, advantages, and pivot strategies when assessing Australia’s regulatory landscape to ensure product viability and compliance</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry" data-keywords="raksha international sustainability and & education program RISEP tata partnership global international executives presentation pain point analysis supply gap event coordination cross-functional communication">
+              <div class="entry-left">
+                <span class="entry-tag">TATA Corporate Partnership</span>
+                <h3 class="entry-title">Raksha International Sustainability & Education Program</h3>
+                <div class="entry-skill-tags">
+                  <span>International Partnerships</span><span>Executive Presentations</span><span>Pain Point Analysis</span><span>Supply Gap Analysis</span><span>Event Coordination</span><span>Cross-functional Communication</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <ul class="entry-desc">
+                    <li>Pitched and executed an CSR initiative immersing into local unvoiced gaps in partnership with Tata</li>
+                    <li>Impacted 1,050+ underprivileged students and their families by advancing school infrastructure and installing a water cooling system in an underfunded K-12 school in Jamshedpur, India</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry" data-keywords="portuguese bank marketing data analysis machine learning python ai jupyter notebook hypothesis testing confidence intervals user persona analysis marketing strategy subscription prediction logsitic regression linear ML classifier client records loan statistics predictions">
+              <div class="entry-left">
+                <span class="entry-tag">Independent Project</span>
+                <h3 class="entry-title">Portuguese Bank Marketing Subscription Analysis</h3>
+                <div class="entry-skill-tags">
+                  <span>Machine Learning</span><span>AI Classifier Optimization</span><span>Python</span><span>Hypothesis Testing</span><span>Confidence Intervals</span><span>User Persona Analysis</span><span>Marketing Strategy</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <ul class="entry-desc">
+                    <li>Built a logistic regression ML classifier on 24,000+ Portuguese bank client records with a false positive rate of only 10.16%, minimizing wasted marketing spend on non-converting clients</li>
+                    <li>Applied 95% confidence intervals upon a linear regression ML model predicting client age from a client's demographics and housing + loan status, revealing statistically significant age-to-loan relationships</li>
+                    <li>Optimized classification threshold to 0.2 probability cutoff by balancing sensitivity against false positives to improve usability in bank marketing predictions</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry" data-keywords="sustainsource crowe case competition national crowe case competition case competition business strategy consulting supply chain supply-chain expansion inventory management sustainable sourcing sourcing strategy procurement procurement strategy pricing strategy marketing strategy cost management operations strategy tariff analysis market volatility gen-z fashion retail strategy fashion industry demand forecasting logistics vendor management supplier diversification business analysis strategic planning competitive analysis financial modeling presentation design pitch deck teamwork collaboration problem solving data analysis operational efficiency inventory optimization cost optimization margin optimization growth strategy brand strategy sustainability esg circular fashion risk mitigation scenario planning product innovation design innovation go-to-market strategy gtm strategy analytics market research cross-functional collaboration leadership stakeholder presentation business case strategy consulting project management undergraduate competition student consultant supply chain reallocation global sourcing tariff mitigation retail operations consumer behavior forecasting budgeting revenue strategy profit optimization resilience strategy sourcing optimization inventory allocation">
+              <div class="entry-left">
+                <span class="entry-tag">Team Project</span>
+                <h3 class="entry-title">SustainSource - 2026 National Crowe Case Competition</h3>
+                <div class="entry-skill-tags">
+                  <span>Supply-Chain Expansion</span><span>Inventory Management</span><span>Presentation Design</span><span>Sustainable Sourcing</span><span>Pricing Strategy</span><span>Marketing Strategy</span><span>Cost Management</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <p>Mapped out supply-chain reallocation for a Gen-Z fashion brand to maximize inventory and design innovation while minimizing costs amid rising tariffs and market volatility</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry" data-keywords="spotify user behavior analysis spotify analytics data analytics data science statistics statistical analysis simulation testing hypothesis testing confidence intervals bootstrap confidence interval bootstrap sampling data preprocessing data cleaning data ingestion exploratory data analysis eda user engagement engagement analysis listening behavior consumer behavior product analytics product expansion data-driven recommendations predictive analytics statistical modeling quantitative analysis experimentation a-b testing user retention active users streaming analytics music streaming digital product analytics python pandas numpy scipy matplotlib seaborn jupyter notebook machine learning analytics business intelligence behavioral analytics probability inferential statistics sampling distribution mean weekly listening time user segmentation trend analysis decision-making metrics kpi analysis dashboarding insights generation statistical inference analytical thinking research methods experimentation design data visualization workflow automation end-to-end analytics model validation user activity analysis churn analysis growth analytics recommendation strategy product strategy customer insights operational analytics reporting communication independent project portfolio project">
+              <div class="entry-left">
+                <span class="entry-tag">Independent Project</span>
+                <h3 class="entry-title">Spotify User Behavior Analysis</h3>
+                <div class="entry-skill-tags">
+                  <span>Simulation Testing</span><span>Hypothesis Testing</span><span>Data-driven Recommendations</span><span>Confidence Intervals</span><span>Data Preprocessing</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <ul class="entry-desc">
+                    <li>Conducted user behavior simulations, estimating the true proportion of active Spotify users at 83.91%–84.54% with a 95% bootstrap confidence interval on 50,000 users</li>
+                    <li>Discovered a stronger-than-expected user engagement at 9.99 hours of mean weekly listening time using hypothesis testing</li>
+                    <li>Delivered recommendations for product expansion, backed by end-to-end statistical workflows in Python covering ingestion, cleaning, confidence interval estimation, and hypothesis testing</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry" data-keywords="company health tracker investment decision-maker ai agent ai agents artificial intelligence generative ai microsoft copilot copilot studio prompt engineering llm large language model conversational ai autonomous agents ai workflow automation financial analysis investment analysis investment decision-making stock analysis market analysis portfolio analysis company valuation business intelligence financial modeling predictive analytics decision support fintech enterprise ai ai-powered analytics data aggregation real-time analytics api embedding api integration financial dashboards company performance tracking kpi tracking earnings analysis revenue analysis profitability analysis risk assessment sentiment analysis market trends competitive analysis automation intelligent systems recommendation engine natural language processing nlp retrieval augmented generation rag vector database embeddings ux interface design ui ux dashboard design user experience product design no-code ai low-code ai workflow orchestration business strategy data visualization insight generation research automation startup analysis public company analysis strategic recommendations machine learning analytics financial forecasting investor insights productivity tools digital transformation innovation systems thinking technical prototyping rapid prototyping independent project portfolio project">
+              <div class="entry-left">
+                <span class="entry-tag">AI Agent</span>
+                <h3 class="entry-title">Company Health Tracker & Investment Decision-maker</h3>
+                <div class="entry-skill-tags">
+                  <span>AI Agents</span><span>Microsoft Copilot</span><span>Prompt Engineering</span><span>UX Interface Design</span><span>API Embedding</span><span>Investment Analysis</span><span>Financial Decision-making</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <p>ADD HERE</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry" data-keywords="mental health human performance report mental health analytics human performance analytics data analysis feature engineering data preprocessing python jupyter notebook statistical analysis behavioral analytics health analytics gaming analytics gamer behavior academic performance sleep quality data visualization segmented analysis exploratory data analysis eda correlation analysis predictive analytics machine learning analytics quantitative research research analysis user behavior analysis wellness analytics performance metrics lifestyle analytics psychological analytics cognitive performance health data consumer insights statistical modeling data cleaning data transformation categorical encoding dataset representativeness data storytelling insight generation analytics reporting visualization dashboards matplotlib pandas numpy scipy hypothesis generation trend analysis regression analysis multivariable analysis youth behavior gaming habits sleep analysis productivity analysis decision-making analytical thinking independent research portfolio project end-to-end analytics workflow data-driven insights behavioral science applied analytics">
+              <div class="entry-left">
+                <span class="entry-tag">Independent Project</span>
+                <h3 class="entry-title">Mental Health & Human Performance Report</h3>
+                <div class="entry-skill-tags">
+                  <span>Feature Engineering</span><span>Data Preprocessing</span><span>Data Analysis</span><span>Python</span><span>Jupyter Notebook</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <ul class="entry-desc">
+                    <li>Analyzed 1,000 gamers across 27 health, activity, and performance-related variables, finding that a higher sleep quality strengthens a negative relationship between academic performance and daily gaming hours</li>
+                    <li>Performed feature engineering by regrouping rare categories to preserve dataset representativeness in data preprocessing</li>
+                    <li>Delivered segmented visualizations across three sleep quality groups to inform young users of the tradeoffs between sleep quality, gaming hours, and performance</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry" data-keywords="box office performance analysis machine learning ml predictive modeling predictive analytics linear regression regression analysis python jupyter notebook data preprocessing data analysis entertainment analytics movie analytics film industry analytics marvel cinematic universe mcu box office analysis revenue forecasting financial forecasting production budget analysis worldwide revenue correlation analysis statistical modeling data visualization exploratory data analysis eda business analytics quantitative analysis profitability analysis investment analysis return on investment roi media analytics consumer behavior trend analysis forecasting models supervised learning scikit-learn pandas numpy matplotlib data cleaning feature engineering model evaluation insight generation analytics reporting data-driven decision-making entertainment business research analytics workflow independent project portfolio project">
+              <div class="entry-left">
+                <span class="entry-tag">Independent Project</span>
+                <h3 class="entry-title">Box Office Performance Analysis</h3>
+                <div class="entry-skill-tags">
+                  <span>Machine Learning</span><span>Python</span><span>Jupyter Notebook</span><span>Linear Regression</span><span>Data Preprocessing</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <ul class="entry-desc">
+                    <li>Applied a linear regression ML model across 27 MCU films to estimate returns based on film investment, discovering a strong correlation between production budget and worldwide box office revenue</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="projects-no-results" id="projectsNoResults">No projects found for that search.</p>
         </div>
       </div>
     </section>
 
     <hr class="divider" />
 
-    <!-- Frameworks Section -->
-    <section class="section" id="frameworks">
-      <div class="section-label">Frameworks &amp; Implementations</div>
+    <!-- Experiences Section -->
+    <section class="section" id="experiences">
+      <div class="section-label">Experiences & Positions
+        <div class="projects-polaroids">
+          <div class="polaroid proj-polaroid-back">
+            <img src="Photos/Photo13.jpg" alt="Dev Sharma" />
+            <div class="polaroid-caption">Hosting a GTM pitching competition for growing campus startups, engaging bachelors to PhD students</div>
+          </div>
+          <div class="polaroid proj-polaroid-middle">
+            <img src="Photos/Photo29.jpg" alt="Dev Sharma" />
+            <div class="polaroid-caption">Leading 100+ students through an AI Red Teaming simulation and workshop on systems security</div>
+          </div>
+          <div class="polaroid proj-polaroid-front">
+            <img src="Gallery/Event Planning/EventPlanning4.jpg" alt="Dev Sharma" />
+            <div class="polaroid-caption">Managing logistics and 107 attendees for a TED conference featuring Emmy Award + Pulitzer Prize speakers</div>
+          </div>
+        </div>
+      </div>
       <div class="section-content">
-        <div class="entry-list" id="frameworks-list">
-
-          <div class="entry">
-            <div class="entry-left">
-              <span class="entry-tag">SEQ-01 // TACTICAL</span>
-              <h3 class="entry-title">Neural-Link Biosystems</h3>
-            </div>
-            <div class="entry-right">
-              <span class="entry-label">OUTPUT</span>
-              <p class="entry-desc">Market entry strategy and regulatory compliance architecture for non-invasive somatic data extraction.</p>
-            </div>
+        <div class="projects-search-wrap">
+          <div class="projects-search-bar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="experienceSearch" placeholder="Search by keyword, skill, or topic..." class="projects-search-input" />
+            <span class="projects-search-clear" id="expSearchClear">✕</span>
           </div>
-
-          <div class="entry">
-            <div class="entry-left">
-              <span class="entry-tag">SEQ-02 // STRUCTURAL</span>
-              <h3 class="entry-title">Quantum Logistics API</h3>
-            </div>
-            <div class="entry-right">
-              <span class="entry-label">OUTPUT</span>
-              <p class="entry-desc">Redesigned the core routing algorithm payload, increasing enterprise integration speed by 400%.</p>
-            </div>
+          <div class="projects-tags">
+            <span class="etag active" data-tag="all">All</span>
+            <span class="etag" data-tag="product">Product</span>
+            <span class="etag" data-tag="strategy">Strategy</span>
+            <span class="etag" data-tag="management">Management</span>
+            <span class="etag" data-tag="consulting">Consulting</span>
+            <span class="etag" data-tag="engineering">Engineering</span>
           </div>
+          <div class="entry-grid" id="experiences-list">
 
-          <div class="entry">
-            <div class="entry-left">
-              <span class="entry-tag">SEQ-03 // SYSTEMIC</span>
-              <h3 class="entry-title">Kounter Kulture Genetics</h3>
+            <div class="entry" data-keywords="panduit electrical product management intern engineering hardware operations supply chain data analysis ai inventory power bi dashboard design UX excel product lifecycle inventory compression lugs lug selection engine product selection engine recommendation engine technical product management industrial automation manufacturing analytics industrial engineering electrical engineering connector systems tooling compatibility customer recommendation system decision support system inventory optimization abc classification abc inventory analysis supply-demand analysis inventory forecasting supply chain optimization product catalog product attributes product configuration rules-based engine digital transformation workflow automation customer-centric design user experience optimization interface prototyping dashboard analytics power bi reporting business intelligence data visualization stakeholder collaboration cross-functional collaboration enterprise systems operational efficiency operational analytics process optimization sku management product data management pdm master data technical documentation engineering operations procurement analytics sourcing analytics forecasting analytics demand planning sales enablement customer insights industrial products b2b product management hardware product strategy digital product development data-driven decision-making analytics strategy systems thinking agile product development solution design feature prioritization customer requirements inventory visibility engineering data analytics manufacturing operations electrical components terminal lugs cable connectors recommendation algorithms tooling selection compatibility matching workflow design process improvement user-centered design technical problem solving portfolio management enterprise ux product operations analytics automation strategy">
+              <div class="entry-left">
+                <span class="entry-tag">May 2026—PRESENT</span>
+                <h3 class="entry-title">Electrical Product Management Intern</h3>
+                <p class="entry-company">Panduit Corp.</p>
+                <div class="entry-skill-tags">
+                  <span>Product Lifecycle</span><span>Customer Experience</span><span>Data Analysis</span><span>UX Interface Design</span><span>Excel</span><span>Dashboard Creation</span><span>Inventory Management</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <p>Building a product selection engine that transforms technical data, inventory levels, ABC Class codes, and tooling compatibility into a streamlined customer recommendation experience for compression lugs</p>
+                </div>
+              </div>
             </div>
-            <div class="entry-right">
-              <span class="entry-label">OUTPUT</span>
-              <p class="entry-desc">Productization of profound botanical experiences through rigorous isolation and stabilization models.</p>
+
+            <div class="entry" data-keywords="jila illinois enactus project manager nonprofit social impact operations team leadership go to market GTM finance figma forecasting workflow business model market sizing competitor analysis market segmentation excel aws klerk vercel vscode investor pitch revenue pricing club position leadership social entrepreneurship startup operations startup strategy venture development nonprofit leadership project leadership program management impact strategy social innovation ecosystem building partnership development sponsorship outreach fundraising investor relations venture pitching pitch deck storytelling strategic communication financial modeling revenue forecasting pricing optimization business model innovation lean startup customer discovery customer validation user research market validation product-market fit go-to-market strategy gtm execution growth strategy scaling strategy operational strategy workflow optimization process mapping roadmap planning milestone tracking market research competitor benchmarking competitor intelligence tam sam som market sizing segmentation analysis consumer insights user personas financial projections forecasting models startup finance stakeholder management client relations crm relationship building business development strategic partnerships community engagement social impact measurement sustainability strategy impact investing entrepreneurship leadership development student leadership cross-functional coordination collaboration agile workflows design thinking human-centered design ux prototyping wireframing interface design product prototyping no-code tools cloud infrastructure aws cloud computing deployment workflows vercel frontend collaboration visual communication presentation design canva branding marketing campaigns digital marketing awareness campaigns outreach strategy analytics decision-making klerk productivity tools vscode software collaboration innovation strategy venture scalability operational analytics execution strategy initiative management university organization enactus consulting research analysis data-driven strategy portfolio project">
+              <div class="entry-left">
+                <span class="entry-tag">September 2025-PRESENT</span>
+                <h3 class="entry-title">Project Manager</h3>
+                <p class="entry-company">Jila (Illinois Enactus)</p>
+                <div class="entry-skill-tags">
+                  <span>AWS</span><span>Sponsorships</span><span>Revenue Forecasting</span><span>Market Analysis</span><span>Investor Pitching</span><span>Klerk</span><span>Figma</span><span>Vercel</span><span>Canva</span><span>Marketing Strategy</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <ul class="entry-desc">
+                    <li>Gained interest from 20+ investors by pitching scalability plans, financial projections, and Figma app interfaces</li>
+                    <li>Build Excel-based revenue forecasts and workflow diagrams to improve pricing, business models, and roadmaps</li>
+                    <li>Secured Jila’s first five financial sponsorships, conducted rigorous market sizing, and analyzed competitors and users</li>
+                  </ul>
+                </div>
+              </div>
             </div>
+
+            <div class="entry" data-keywords="entrecorps strategy consultant startup advisory entrepreneurship business growth compliance ai contract reviewing cash flow models marketing roadmapping product pilot client communication presentation powerpoint excel interview economic analysis trends market entry cross-functional collaboration team club position leadership competitive analysis stakeholder presentations executive strategy consulting business intelligence financial forecasting profitability analysis operational strategy growth forecasting scenario planning strategic planning adoption analysis ai governance regulatory analysis legal tech b2b strategy enterprise adoption technology commercialization digital transformation venture strategy startup scalability customer acquisition acquisition strategy pricing analysis roi analysis channel strategy sales strategy revenue optimization market intelligence trend forecasting macroeconomic analysis risk analysis due diligence contract analytics workflow automation process optimization data-driven recommendations consulting deliverables client presentations board-level communication strategic insights implementation strategy feasibility analysis innovation consulting solution strategy customer segmentation demand analysis industry research business operations strategic execution consulting research ecosystem analysis commercialization strategy enterprise solutions startup ecosystems advisory services management consulting analytical problem solving">
+              <div class="entry-left">
+                <span class="entry-tag">September 2025-PRESENT</span>
+                <h3 class="entry-title">Strategy Consultant</h3>
+                <p class="entry-company">EntreCorps</p>
+                <div class="entry-skill-tags">
+                  <span>Market Entry</span><span>Economic Analysis</span><span>Cash Flow Modelling</span><span>Marketing Strategy</span><span>Product Roadmapping</span><span>Pilot Execution</span><span>Excel</span><span>PowerPoint</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <ul class="entry-desc">
+                    <li>Led B2B market entry by researching volatility in AI adoption, inventory, investments, trade to map GTM scenarios</li>
+                    <li>Presented actionable roadmaps to CEO by comparing pricing, ROI, and adoption data of B2B marketing channels</li>
+                    <li>Built Excel-based cash flow models to project scalability while verifying compliance of AI contract reviewing tool</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry" data-keywords="disruption Lab dlab strategy analyst sentiment analysis competitor pilot client communication red teaming prompt engineering risk assessments research reports powerpoint excel cross-functional collaboration team club organization leadership position assistive technology accessibility innovation human-centered ai ai integration educational technology edtech cad workflow optimization user behavior analysis usability analysis technology evaluation product evaluation solution assessment implementation strategy workflow design automation strategy ai adoption adoption barriers enterprise ai user-centric design stakeholder presentations executive presentations strategic recommendations research synthesis qualitative analysis quantitative analysis operational analysis innovation strategy emerging technologies digital transformation systems analysis technology benchmarking pilot strategy integration planning accessibility strategy learning experience optimization productivity enhancement design tool analysis technical communication consulting analysis process improvement experimentation strategy scenario analysis ai safety responsible ai governance model evaluation interaction design collaborative problem solving initiative management strategic execution organizational strategy higher education innovation">
+              <div class="entry-left">
+                <span class="entry-tag">September 2025-PRESENT</span>
+                <h3 class="entry-title">Strategy Analyst</h3>
+                <p class="entry-company">Disruption Lab</p>
+                <div class="entry-skill-tags">
+                  <span>Red Teaming</span><span>Prompt Engineering</span><span>Sentiment Analysis</span><span>Competitor Analysis</span><span>Client Communication</span><span>Excel</span><span>PowerPoint</span><span>Research Reports</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <ul class="entry-desc">
+                    <li>Develop a 4-week assistive technology pilot for CAD design courses, pitching integration to Gies leadership</li>
+                    <li>Analyze in-class tools against alternatives while assessing CAD usage patterns, driving user-centric AI integration</li>
+                    <li>Draft and refine research reports and presentations outlining AI automation gaps, pilot integration, and risks</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry" data-keywords="goldman sachs possibilities series 2026 professional development resume interview mentorship webinars learning program early careers investment banking finance industry exposure career readiness networking leadership development career acceleration recruiting preparation behavioral interviews technical interviews personal branding executive communication industry insights corporate culture analyst development business professionalism strategic networking mentorship program talent development student leadership workshop participation virtual learning career exploration financial services internship preparation business acumen communication skills presentation skills relationship building collaborative learning growth mindset workforce readiness career coaching professional networking organizational awareness corporate training leadership workshops finance careers emerging leaders campus recruiting skill development experiential learning talent pipeline business etiquette industry mentorship">
+              <div class="entry-left">
+                <span class="entry-tag">April 2026-May 2026</span>
+                <h3 class="entry-title">2026 Goldman Sachs Possibilities Summit</h3>
+                <p class="entry-company">Goldman Sachs</p>
+                <div class="entry-skill-tags">
+                  <span>Professional Development</span><span>Senior Mentorship</span><span>Resume Building</span><span>Interview Practice</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <p>Selected for a early-career development summit focused on finance, innovation, and recruiting preparation, engaging with Goldman Sachs professionals through mentorship, networking, and interview-readiness workshops.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry" data-keywords="assistant manager kumon of mundelein ivanhoe process optimization improvement customer relations cross-functional collaboration data tracking partnership event planning negotiations revenue tracking retention customer satisfaction performance service work experience job operations management team supervision staff management workforce coordination onboarding training development quality assurance service operations client management parent communication student support educational services academic operations scheduling coordination workflow management operational efficiency administrative operations conflict resolution problem solving crm communication strategy stakeholder engagement program coordination productivity improvement employee mentorship coaching leadership operations analytics business operations multitasking organizational leadership performance management service excellence relationship management client retention satisfaction metrics process standardization continuous improvement task delegation time management office administration tutoring center operations education management community engagement people management team coordination data accuracy reporting operational support customer experience optimization">
+              <div class="entry-left">
+                <span class="entry-tag">June 2020-May 2025</span>
+                <h3 class="entry-title">Assistant Manager</h3>
+                <p class="entry-company">Kumon of Mundelein-Ivanhoe</p>
+                <div class="entry-skill-tags">
+                  <span>Negotiations</span><span>Customer Relations</span><span>Process Optimization</span><span>Event Planning</span><span>Retention Optimization</span><span>Sales Tracking</span><span>Performance Tracking</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <ul class="entry-desc">
+                    <li>Monitored and resolved process gaps, boosting satisfaction by 30% and retention to all-time high of 92%</li>
+                    <li>Supervised and coordinated 10+ workers across tutoring, grading, data entry to ensure high-quality service delivery</li>
+                    <li>Trained 20+ staff while tracking performance and addressing errors to optimize efficiency</li>
+                    <li>Managed scheduling, family check-ups, and personalized programs, enhancing customer experience and relations</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry" data-keywords="logistics finance management elegance decor internship inventory supply chain corss-functional collaboration communication setup weddings events customer relations satisfaction equipment allocation team timely service excel operations coordination event operations vendor coordination venue setup transportation coordination workflow execution operational support budget coordination client-facing communication stakeholder coordination event execution timeline management deadline management problem resolution adaptability fast-paced operations service delivery multitasking operational planning installation coordination resource planning materials handling setup optimization visual planning hospitality operations event production teamwork organizational skills attention to detail client experience operations efficiency field operations execution strategy onsite coordination schedule management resource allocation event logistics planning customer service excellence production support logistics operations event management support communication strategy hands-on operations crisis management operational troubleshooting">
+              <div class="entry-left">
+                <span class="entry-tag">September 2023-November 2023</span>
+                <h3 class="entry-title">Logistics, Finance, and Management Intern</h3>
+                <p class="entry-company">Elegance Decor</p>
+                <div class="entry-skill-tags">
+                  <span>Cross-functional Collaboration</span><span>Inventory Management</span><span>Logistics</span><span>Customer Relations</span><span>Team Coordination</span><span>Equipment Allocation</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <ul class="entry-desc">
+                    <li>Executed end-to-end logistics for multiple weddings, managing on-time inventory allocation, unloading, and set-up</li>
+                    <li>Strengthened client communication by translating needs into budgets, execution plans, and setup visualizations</li>
+                    <li>Prioritized tasks and resolving last-minute issues in fast-paced environments while coordinating with owners</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry" data-keywords="tedxuiuc uiuc tedx logistics event planning partnerships sales trackign revenue outreach email marketing social media cross-functional collaboration strategy research vendors planning venue coordination team conference operations speaker relations stakeholder engagement attendee engagement audience growth sponsorship coordination fundraising strategy community outreach public relations campaign coordination communications strategy event operations workflow coordination program coordination schedule management operational logistics event execution conference management networking coordination leadership communication organizational operations client-facing communication relationship management strategic partnerships vendor management negotiation coordination audience experience public speaking support branding initiatives campaign planning ticketing coordination event promotion experiential marketing professional networking initiative management multitasking operations support execution planning campus engagement large-scale events presentation coordination hospitality coordination budget alignment event production coordination strategic execution collaboration management">
+              <div class="entry-left">
+                <span class="entry-tag">September 2025-PRESENT</span>
+                <h3 class="entry-title">Logistics & Event Planning Team</h3>
+                <p class="entry-company">TEDxUIUC</p>
+                <div class="entry-skill-tags">
+                  <span>Partnerships</span><span>Sales Tracking</span><span>Logistics</span><span>Outreach</span><span>Cross-functional Collaboration</span><span>Marketing Strategy</span><span>Research</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <ul class="entry-desc">
+                    <li>Hosted Emmy Award, Forbes 30 Under 30, and Pulitzer Prize-winning speakers for campus-wide conferences, facilitating outreach and sales to attract 107+ attendees from across Illinois.</li>
+                    <li>Coordinated and executed a campus-wide TEDx conference, inviting 5+ speakers and engaging 200+ attendees</li>
+                    <li>Researched and communicated with 10+ venues and vendors to organize fundraisers, salons, and conferences</li>
+                    <li>Collaborated with finance and marketing teams to ensure cross-functional alignment on updates and budgets</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry" data-keywords="ey expedition program 2026 professional development resume interview mentorship webinars learning program early careers consulting exposure business transformation emerging technologies responsible ai corporate innovation career readiness leadership workshops networking opportunities business acumen strategic thinking enterprise consulting workforce development collaborative learning industry mentorship campus leadership communication skills presentation skills executive insights experiential learning talent development future leaders career acceleration organizational awareness professional networking interview coaching personal branding career exploration ethical technology digital trust governance frameworks problem solving analytical thinking client service mindset consulting career preparation enterprise strategy skill development workshop participation finance and consulting industry exposure growth mindset talent pipeline business professionalism">
+              <div class="entry-left">
+                <span class="entry-tag">March 2026-May 2026</span>
+                <h3 class="entry-title">Expedition EY Program</h3>
+                <p class="entry-company">EY</p>
+                <div class="entry-skill-tags">
+                  <span>Professional Development</span><span>AI Ethics</span><span>Resume-building</span><span>Interview Preparation</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <p>Selected as 1 of 90 UIUC participants for EY’s professional development program, exploring AI ethics, consulting, and enterprise innovation through industry-specialized modules, mentorship, and leadership workshops.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry" data-keywords="united nations un vga volunteer groups alliance ngo representative partner partnerships social advocacy petitions conferences expansion social impact change sdgs Raksha Foundation global international development global partnerships nonprofit strategy humanitarian initiatives civic engagement policy advocacy community development sustainability initiatives international relations coalition building stakeholder engagement intercultural communication diplomatic engagement mission-driven leadership public policy grassroots advocacy social innovation ecosystem collaboration impact initiatives volunteer coordination nonprofit networking conference representation leadership advocacy campaigns global outreach international cooperation change management partnership development social responsibility equity initiatives youth advocacy global citizenship public engagement awareness campaigns strategic alliances sustainable development initiatives community impact organizational representation human-centered initiatives global leadership cross-cultural collaboration relationship management international networking">
+              <div class="entry-left">
+                <span class="entry-tag">Sep. 2024-PRESENT</span>
+                <h3 class="entry-title">Partner & NGO Representative</h3>
+                <p class="entry-company">UN Volunteer Groups Alliance</p>
+                <div class="entry-skill-tags">
+                  <span>Transnational Collaboration</span><span>Social Advocacy</span><span>Expansion</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <p>Represented the Raksha Foundation as one of 100 leading NGOs from 150+ nations driving the UN SDGs globally</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry" data-keywords="event planning coordination logistics exploration team founder illinois entrepreneurs marketing strategy outreach go to market strategy GTM cross-functional collaboration coordination startup ecosystems venture support entrepreneurship leadership founder relations startup consulting growth strategy business development innovation strategy startup acceleration incubator collaboration networking community engagement partnership development ecosystem building strategic planning founder outreach startup mentorship product strategy customer acquisition scaling strategy user growth brand positioning market validation startup operations operational strategy initiative management workshop facilitation stakeholder management communication strategy venture growth entrepreneurial ecosystems strategic execution relationship building campus leadership innovation management business advisory startup engagement investor awareness entrepreneurial leadership community building professional networking event operations audience engagement organizational leadership program coordination execution strategy">
+              <div class="entry-left">
+                <span class="entry-tag">Sep. 2024-PRESENT</span>
+                <h3 class="entry-title">Exploration Team</h3>
+                <p class="entry-company">Founders - Illinois Entrepreneurs</p>
+                <div class="entry-skill-tags">
+                  <span>Event Coordination</span><span>Logistics</span><span>Marketing Strategy</span><span>Outreach</span><span>GTM Strategy</span><span>Cross-functional Collaboration</span>
+                </div>
+                <button class="details-btn" aria-expanded="false">Details ↓</button>
+                <div class="entry-details">
+                  <p>Led campuswide events and aided growing campus startups on funding opportunities, marketing, and GTM improvement</p>
+                </div>
+              </div>
+            </div>
+
           </div>
-
+          <p class="projects-no-results" id="experiencesNoResults">No experiences found for that search.</p>
         </div>
       </div>
     </section>
 
     <hr class="divider" />
 
-    <!-- Trajectory Section -->
-    <section class="section" id="trajectory">
-      <div class="section-label">Trajectory &amp; Distinctions</div>
+    <!-- Startup Ventures Section -->
+    <section class="section" id="startup">
+      <div class="section-label">Startup Ventures
+        <div class="projects-polaroids">
+          <div class="polaroid proj-polaroid-back">
+            <img src="Photos/Photo25.JPEG" alt="Dev Sharma" />
+            <div class="polaroid-caption">Demonstration of FaceFrame's user journey leading up to pilot testing</div>
+          </div>
+          <div class="polaroid proj-polaroid-middle">
+            <img src="Photos/Photo24.JPG" alt="Dev Sharma" />
+            <div class="polaroid-caption">Raksha addressing heat stroke issues with water cooling for 1,050+ students</div>
+          </div>
+          <div class="polaroid proj-polaroid-front">
+            <img src="Gallery/Clothing Design/Clothing3.jpg" alt="Dev Sharma" />
+            <div class="polaroid-caption">My first bridal client's wedding in Cancun, Mexico!</div>
+          </div>
+        </div>
+      </div>
       <div class="section-content">
-        <div class="entry-list" id="trajectory-list">
+        <div class="entry-list" id="startups-list">
 
           <div class="entry">
             <div class="entry-left">
-              <span class="entry-tag">2021—PRESENT</span>
-              <h3 class="entry-title">Principal Architect</h3>
-              <p class="entry-company">Aura Capital Partners</p>
+              <span class="entry-tag">June 2025—PRESENT</span>
+              <h3 class="entry-title">Founding Technical Business Consultant</h3>
+              <p class="entry-company">FaceFrame</p>
+              <div class="entry-skill-tags">
+                <span>Market Validation</span><span>Pitch Deck Design</span><span>UX Design</span><span>Financial Modeling</span><span>Excel</span><span>User Research</span><span>Data Analysis</span>
+              </div>
             </div>
             <div class="entry-right">
               <span class="entry-label">IMPACT</span>
-              <p class="entry-desc">Leading the structural due diligence for cross-border private debt technologies.</p>
+              <ul class="entry-desc">
+                <li>Cross-functionally collect data from product and technical teams to validate feature viability and patent diagrams</li>
+                <li>Design Excel-based forecasting dashboards to guide pricing model, refine pitch deck, and assess expansion risks</li>
+                <li>Execute B2B kiosk integration with 20 locations while surveying 250+ users to iterate on user journey and UX</li>
+              </ul>
             </div>
           </div>
 
           <div class="entry">
             <div class="entry-left">
-              <span class="entry-tag">2018–2021</span>
-              <h3 class="entry-title">Head of Product Strategy</h3>
-              <p class="entry-company">SGL Computational Lab</p>
+              <span class="entry-tag">June 2023-PRESENT</span>
+              <h3 class="entry-title">CEO & Lead Product Designer</h3>
+              <p class="entry-company">Dev Sharma Designs</p>
+              <div class="entry-skill-tags">
+                <span>Global Supply-chain Coordination</span><span>Financial Forecasting</span><span>Customer Research</span><span>Product Improvements</span><span>Excel</span><span>Tableau</span><span>Negotiations</span>
+              </div>
             </div>
             <div class="entry-right">
               <span class="entry-label">IMPACT</span>
-              <p class="entry-desc">Engineered the product lifecycle for early-stage generative AI consumer tools.</p>
+              <ul class="entry-desc">
+                <li>Drive process improvements with bridal try-ons, customer feedback, and design iteration to uphold product quality</li>
+                <li>Analyze demand, pricing, and inventory trends on Excel to generate $25,000 in revenue with a 20,000+ reach</li>
+                <li>Identify and resolve inefficiencies in a global supply chain (7 tailors, 5 manufacturers), maintaining timely orders</li>
+                <li>Perform financial audits and cost reviews on Excel to optimize long-term investments and performance</li>
+              </ul>
             </div>
           </div>
 
           <div class="entry">
             <div class="entry-left">
-              <span class="entry-tag">2023 // RECOGNITION</span>
-              <h3 class="entry-title">Global Innovation Index</h3>
+              <span class="entry-tag">November 2022-PRESENT</span>
+              <h3 class="entry-title">Founder & CEO</h3>
+              <p class="entry-company">The Raksha Foundation</p>
+              <div class="entry-skill-tags">
+                <span>Stakeholder Management</span><span>Team Alignment</span><span>Executive Pitching</span><span>CSR Strategy</span><span>KPI Tracking</span><span>Partnerships</span>
+              </div>
             </div>
             <div class="entry-right">
-              <span class="entry-label">STATUS</span>
-              <p class="entry-desc">Named among the Top 50 Product Strategists in algorithmic implementation.</p>
+              <span class="entry-label">IMPACT</span>
+              <ul class="entry-desc">
+                <li>Targeted bottlenecks for timely distribution of $92,200+ of essentials for 8,005+ individuals across six nations</li>
+                <li>Conducted on-site supply gap analysis across Jamshedpur, India to integrate water systems in partnership with Tata</li>
+                <li>Secured 28 partners (UN, Tata, World Relief) by pitching youth-led, community immersion programs to scale CSR impact</li>
+                <li>Recognized by the UN VGA (1 of 100 NGOs), George H.W. Bush Foundation, IL State Rep. Nabeela Syed</li>
+              </ul>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
     <hr class="divider" />
 
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-      <div class="section-label">Contact</div>
+    <!-- Awards Section -->
+    <section class="section" id="awards">
+      <div class="section-label">Awards &amp; Recognition
+        <div class="projects-polaroids">
+          <div class="polaroid proj-polaroid-back">
+            <img src="Photos/Photo6.jpg" alt="Dev Sharma" />
+            <div class="polaroid-caption">Awarded by CRCA for outstanding academic & professional achievement</div>
+          </div>
+          <div class="polaroid proj-polaroid-middle">
+            <img src="Photos/Photo16.jpg" alt="Dev Sharma" />
+            <div class="polaroid-caption">Honored by George HW Bush Foundation for global impact through art and CSR improvements</div>
+          </div>
+          <div class="polaroid proj-polaroid-front">
+            <img src="Photos/Photo26.jpg" alt="Dev Sharma" />
+            <div class="polaroid-caption">Raised $7,010+ in funding for global initiatives from State Rep. Syed & hundreds of supporters</div>
+          </div>
+        </div>
+      </div>
       <div class="section-content">
-        <div class="contact-block">
-          <p class="contact-text">Engagements are accepted on a selective basis. Reach out to discuss structural alignment.</p>
-          <form class="contact-form" id="contactForm">
-            <div class="form-row">
-              <input type="text" name="name" placeholder="Full Name" class="form-input" required />
-              <input type="email" name="email" placeholder="Email Address" class="form-input" required />
+        <div class="entry-list" id="awards-list">
+          <div class="entry">
+            <div class="entry-left">
+              <span class="entry-tag">Top 15/20K+ Participants Nationally</span>
+              <h3 class="entry-title">Ambrosé — 2026 L'Oréal Brandstorm Product Competition Semi-Finalist</h3>
             </div>
-            <textarea name="message" placeholder="Describe your engagement..." class="form-textarea" required></textarea>
-            <button type="submit" class="form-btn">Initiate Contact</button>
-            <p class="form-status" id="formStatus"></p>
-          </form>
+            <div class="entry-right">
+              <span class="entry-label">RECOGNITION</span>
+              <p class="entry-desc">Selected by L'Oréal executives as one of the top 15 US teams out of 20,000+ participants for a new product synergizing fragrance with evolving technology.</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-left">
+              <span class="entry-tag">May 2026</span>
+              <h3 class="entry-title">Capital AU — 2026 Capital One Case Competition Finalist</h3>
+            </div>
+            <div class="entry-right">
+              <span class="entry-label">RECOGNITION</span>
+              <p class="entry-desc">Selected amongst the top 20 national finalist teams out of 200+ competing teams for an outstanding innovation optimizing Capital One's global expansion.</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-left">
+              <span class="entry-tag">January 2025 - National Honor</span>
+              <h3 class="entry-title">George H.W. Bush Points of Light Award</h3>
+            </div>
+            <div class="entry-right">
+              <span class="entry-label">RECOGNITION</span>
+              <p class="entry-desc">One of 365 young leaders nationally recognized by the George H.W. Points of Light Foundation for meaningful service and outstanding community impact.</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-left">
+              <span class="entry-tag">March 2026</span>
+              <h3 class="entry-title">Gies Scholar & James Scholar</h3>
+            </div>
+            <div class="entry-right">
+              <span class="entry-label">RECOGNITION</span>
+              <p class="entry-desc">Selected among the top 26 students (top 3%) in the Gies College of Business' Class of 2029 for academic excellence, professional achievement, and interview performance.</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-left">
+              <span class="entry-tag">May 2025 - Statewide Award</span>
+              <h3 class="entry-title">CRCA Foundation Scholarship Recipient</h3>
+            </div>
+            <div class="entry-right">
+              <span class="entry-label">RECOGNITION</span>
+              <p class="entry-desc">One of 2 recipients selected for outstanding community impact and innovation.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
   </div><!-- end .card -->
+
+  <!-- Gallery Section -->
+  <section class="gallery-section" id="gallery">
+    <div class="gallery-parallax-bg"></div>
+    <div class="gallery-content">
+      <div class="section-label gallery-label">Gallery</div>
+      <div class="gallery-body">
+        <a class="gallery-tagline-box">
+          <span class="gallery-intro">Explore my passions&nbsp;</span><span class="gallery-sub">in action.</span>
+        </a>
+      </div>
+    </div>
+    <div class="hobby-list">
+
+      <!-- Architecture -->
+      <div class="hobby-box">
+        <div class="hobby-left">
+          <div class="hobby-title">Architecture</div>
+          <button class="view-all-btn" data-hobby="architecture"
+            data-extra='["Gallery/Architecture/Architecture6.jpg","Gallery/Architecture/Architecture10.png","Gallery/Architecture/Architecture8.jpg","Gallery/Architecture/Architecture9.png", "Gallery/Architecture/Architecture1.jpg", "Gallery/Architecture/Architecture2.png", "Gallery/Architecture/Architecture5.jpg", "Gallery/Architecture/Architecture11.png", "Gallery/Architecture/Architecture14.jpg"]'>
+            <span class="view-all-text">View all</span>
+            <span class="view-all-arrow">→</span>
+          </button>
+        </div>
+        <div class="hobby-images">
+          <img src="Gallery/Architecture/Architecture12.png" alt="" class="hobby-img" data-hobby="architecture" data-index="0"/>
+          <img src="Gallery/Architecture/Architecture3.png" alt="" class="hobby-img" data-hobby="architecture" data-index="1"/>
+          <img src="Gallery/Architecture/Architecture7.jpg" alt="" class="hobby-img" data-hobby="architecture" data-index="2"/>
+          <img src="Gallery/Architecture/Architecture13.png" alt="" class="hobby-img" data-hobby="architecture" data-index="3"/>
+          <img src="Gallery/Architecture/Architecture4.png" alt="" class="hobby-img" data-hobby="architecture" data-index="4"/>
+        </div>
+      </div>
+
+      <!-- Clothing Design -->
+      <div class="hobby-box">
+        <div class="hobby-left">
+          <div class="hobby-title">Clothing Design</div>
+          <button class="view-all-btn" data-hobby="clothing"
+            data-extra='["Gallery/Clothing Design/Clothing16.png", "Gallery/Clothing Design/Clothing15.png", "Gallery/Clothing Design/Clothing17.png", "Gallery/Clothing Design/Clothing8.jpg", "Gallery/Clothing Design/Clothing2.jpg","Gallery/Clothing Design/Clothing10.jpg","Gallery/Clothing Design/Clothing4.jpg"]'>
+            <span class="view-all-text">View all</span>
+            <span class="view-all-arrow">→</span>
+          </button>
+        </div>
+        <div class="hobby-images">
+          <img src="Gallery/Clothing Design/Clothing1.jpg" alt="" class="hobby-img" data-hobby="clothing" data-index="0"/>
+          <img src="Gallery/Clothing Design/Clothing6.jpg" alt="" class="hobby-img" data-hobby="clothing" data-index="1"/>
+          <img src="Gallery/Clothing Design/Clothing14.jpg" alt="" class="hobby-img" data-hobby="clothing" data-index="2"/>
+          <img src="Gallery/Clothing Design/Clothing13.jpg" alt="" class="hobby-img" data-hobby="clothing" data-index="3"/>
+        </div>
+      </div>
+
+      <!-- Event Planning -->
+      <div class="hobby-box">
+        <div class="hobby-left">
+          <div class="hobby-title">Event Planning</div>
+          <button class="view-all-btn" data-hobby="events"
+            data-extra='["Gallery/Event Planning/EventPlanning10.jpg", "Gallery/Event Planning/EventPlanning5.mp4","Gallery/Event Planning/EventPlanning2.jpg","Gallery/Event Planning/EventPlanning4.jpg","Gallery/Event Planning/EventPlanning12.jpg", "Photos/Photo13.jpg", "Gallery/Event Planning/EventPlanning11.JPG", "Photos/Photo23.jpg", "Photos/Photo17.jpg", "Photos/Photo11.jpg"]'>
+            <span class="view-all-text">View all</span>
+            <span class="view-all-arrow">→</span>
+          </button>
+        </div>
+        <div class="hobby-images">
+          <img src="Gallery/Event Planning/EventPlanning1.jpg" alt="" class="hobby-img" data-hobby="events" data-index="0"/>
+          <img src="Gallery/Event Planning/EventPlanning6.jpg" alt="" class="hobby-img" data-hobby="events" data-index="1"/>
+          <img src="Photos/Photo19.jpg" alt="" class="hobby-img" data-hobby="events" data-index="2"/>
+          <img src="Gallery/Event Planning/EventPlanning7.jpg" alt="" class="hobby-img" data-hobby="events" data-index="3"/>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+    <div class="lightbox-img-wrap">
+    <img src="" alt="" id="lightboxImg"/>
+    <video id="lightboxVideo" controls playsinline style="display:none; max-width:90vw; max-height:90vh; border-radius:8px;">
+      <source id="lightboxVideoSrc" src="" type="video/mp4"/>
+    </video>
+  </div>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
 
   <script src="globe.js"></script>
   <script src="interactions.js"></script>
