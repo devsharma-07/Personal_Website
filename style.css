@@ -1490,15 +1490,77 @@ ul.entry-desc li {
   transition: width linear;
 }
 
-/* ── Responsive ───────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — Tablet (max 1024px)
+   ══════════════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .card {
-    margin: 0 24px 24px;
+    margin: 0 24px 0 24px;
+  }
+
+  .gallery-section {
+    margin: 0 24px 24px 24px;
+  }
+
+  .topbar {
+    padding: 14px 24px;
+  }
+
+  .nav {
+    right: 24px;
+    left: 24px;
+    gap: 20px;
+  }
+
+  .nav.sticky {
+    padding: 18px 24px;
+  }
+
+  .hero {
+    padding: 0 0 40px 40px;
+  }
+
+  .hero-headline {
+    font-size: clamp(56px, 10vw, 100px);
+  }
+
+  .hero-globe {
+    right: -80px;
+    width: 65%;
+    opacity: 0.3;
   }
 
   .section {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: 180px 1fr;
+    gap: 0 40px;
+    padding: 48px 40px;
+  }
+
+  .gallery-content {
+    grid-template-columns: 180px 1fr;
+    gap: 0 40px;
+    padding: 48px 40px 0 40px;
+  }
+
+  .thinking-bar {
+    top: 200px;
+    padding: 20px 40px;
+  }
+
+  .thinking-label {
+    font-size: 22px;
+  }
+
+  .thinking-typed {
+    font-size: 22px;
+  }
+
+  .thinking-cursor {
+    font-size: 22px;
+  }
+
+  .thinking-cta {
+    right: 40px;
   }
 
   .entry {
@@ -1506,25 +1568,55 @@ ul.entry-desc li {
     gap: 12px;
   }
 
-  .hero-headline {
-    font-size: clamp(56px, 14vw, 100px);
+  .hero-polaroid {
+    width: 170px;
   }
 
-  .hero-globe {
-    right: -80px;
-    width: 70%;
-    opacity: 0.35;
+  .hero-polaroid img {
+    height: 160px;
   }
 
-  .nav {
+  .hobby-list {
+    padding: 24px 24px 40px 24px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .hobby-box {
     gap: 20px;
-    right: 24px;
+    padding: 20px 24px;
+  }
+
+  .hobby-img {
+    height: 90px;
+  }
+
+  .gallery-intro {
+    font-size: 20px;
+  }
+
+  .gallery-sub {
+    font-size: 24px;
   }
 }
 
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — Mobile (max 640px)
+   ══════════════════════════════════════════════════════════════ */
 @media (max-width: 640px) {
+  .card {
+    margin: 0 12px 0 12px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .gallery-section {
+    margin: 0 12px 12px 12px;
+    border-radius: 10px;
+    min-height: auto;
+  }
+
   .topbar {
-    padding: 14px 20px;
+    padding: 12px 16px;
     font-size: 11px;
   }
 
@@ -1532,32 +1624,247 @@ ul.entry-desc li {
     display: none;
   }
 
-  .card {
-    margin: 0 12px 12px;
-    border-radius: 10px;
+  .nav {
+    top: 16px;
+    right: 16px;
+    left: 16px;
+    gap: 12px;
   }
 
+  .nav.sticky {
+    padding: 14px 16px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 100px 20px 40px 20px;
+    min-height: 70vh;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-name-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .hero-polaroid {
+    width: 140px;
+    order: -1;
+  }
+
+  .hero-polaroid img {
+    height: 130px;
+  }
+
+  .hero-headline {
+    font-size: clamp(48px, 14vw, 80px);
+  }
+
+  .hero-subheadline {
+    font-size: clamp(30px, 9vw, 56px);
+  }
+
+  .hero-tagline {
+    font-size: clamp(14px, 4vw, 20px);
+  }
+
+  .hero-globe {
+    display: none;
+  }
+
+  /* Thinking bar */
+  .thinking-bar {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin: 12px;
+    padding: 16px 20px;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-radius: 12px;
+  }
+
+  .thinking-bar:hover {
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+
+  .thinking-label {
+    font-size: 16px;
+  }
+
+  .thinking-typed {
+    font-size: 16px;
+  }
+
+  .thinking-cursor {
+    font-size: 16px;
+  }
+
+  .thinking-cta {
+    display: none;
+  }
+
+  /* Sections */
   .section {
-    padding: 40px 24px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 32px 20px;
+  }
+
+  .section-label {
+    font-size: 10px;
   }
 
   .divider {
-    margin: 0 24px;
+    margin: 0 12px;
+  }
+
+  /* Gallery */
+  .gallery-content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 32px 20px 0 20px;
+  }
+
+  .gallery-label {
+    display: none;
+  }
+
+  .gallery-intro {
+    font-size: 16px;
+  }
+
+  .gallery-sub {
+    font-size: 20px;
+  }
+
+  .gallery-tagline-box {
+    padding: 10px 20px;
+  }
+
+  /* Hobby boxes — stack vertically on mobile */
+  .hobby-list {
+    padding: 16px 12px 32px 12px;
+    width: 100%;
+    margin: 0;
+    gap: 12px;
+  }
+
+  .hobby-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 16px;
+  }
+
+  .hobby-left {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .hobby-images {
+    width: 100%;
+    overflow-x: auto;
+    gap: 8px;
+  }
+
+  .hobby-img {
+    flex: 0 0 120px;
+    height: 80px;
+  }
+
+  /* Entries */
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .entry-skill-tags {
+    flex-wrap: wrap;
+  }
+
+  /* Lightbox nav easier to tap on mobile */
+  .lightbox-nav {
+    font-size: 48px;
+    padding: 0 16px;
+  }
+
+  .lightbox-close {
+    top: 20px;
+    right: 20px;
+    font-size: 22px;
+  }
+
+  /* Loader */
+  .loader-belief {
+    font-size: clamp(14px, 5vw, 22px);
+    white-space: normal;
+  }
+
+  .loader-inner {
+    padding: 0 24px;
+  }
+
+  /* Parallax disabled on mobile (poor performance) */
+  .gallery-parallax-bg {
+    background-attachment: scroll;
+  }
+
+  /* Form */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — Large monitors (min 1440px)
+   ══════════════════════════════════════════════════════════════ */
+@media (min-width: 1440px) {
+  .card {
+    margin: 0 80px 0 80px;
+  }
+
+  .gallery-section {
+    margin: 0 80px 80px 80px;
+  }
+
+  .topbar {
+    padding: 16px 80px;
   }
 
   .nav {
-    top: 20px;
-    right: 20px;
-    gap: 14px;
+    right: 80px;
+    left: 80px;
   }
 
-  .hero {
-    padding: 0 0 40px 24px;
-    min-height: 80vh;
+  .nav.sticky {
+    padding: 20px 80px;
   }
 
-  .form-row {
-    grid-template-columns: 1fr;
+  .section {
+    padding: 72px 80px;
+  }
+
+  .gallery-content {
+    padding: 72px 80px 0 80px;
   }
 }
 
