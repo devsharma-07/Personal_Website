@@ -418,4 +418,27 @@ function revealName() {
     if (e.key === 'ArrowLeft') showPrev();
     if (e.key === 'Escape') closeLightbox();
   });
+
+  // ── Mobile Nav ───────────────────────────────────────────────
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileNavDropdown = document.getElementById('mobileNavDropdown');
+
+  if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuBtn.classList.toggle('open');
+      mobileNavDropdown.classList.toggle('open');
+    });
+
+    mobileNavDropdown.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuBtn.classList.remove('open');
+        mobileNavDropdown.classList.remove('open');
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const target = document.querySelector(href);
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  }
 })();

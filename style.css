@@ -1603,97 +1603,304 @@ ul.entry-desc li {
 /* ══════════════════════════════════════════════════════════════
    RESPONSIVE — Mobile (max 640px)
    ══════════════════════════════════════════════════════════════ */
-@media (max-width: 640px) {
+/* ══════════════════════════════════════════════════════════════
+   MOBILE HAMBURGER NAV
+   ══════════════════════════════════════════════════════════════ */
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0,0,0,0.12);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  transition: background 0.2s;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: #0d0d0d;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn.open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.mobile-menu-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-menu-btn.open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.mobile-nav-dropdown {
+  display: none;
+  position: fixed;
+  top: 68px;
+  right: 16px;
+  z-index: 9998;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(16px);
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  padding: 8px 0;
+  min-width: 180px;
+  flex-direction: column;
+}
+
+.mobile-nav-dropdown.open {
+  display: flex;
+}
+
+.mobile-nav-dropdown a {
+  padding: 12px 20px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #0d0d0d;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: background 0.15s;
+}
+
+.mobile-nav-dropdown a:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — Tablet (max 1024px)
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
   .card {
-    margin: 0 12px 0 12px;
-    border-radius: 16px 16px 0 0;
+    margin: 0 24px 0 24px;
   }
 
   .gallery-section {
-    margin: 0 12px 12px 12px;
-    border-radius: 10px;
-    min-height: auto;
+    margin: 0 24px 24px 24px;
   }
 
   .topbar {
-    padding: 12px 16px;
-    font-size: 11px;
-  }
-
-  .topbar-center {
-    display: none;
+    padding: 14px 24px;
   }
 
   .nav {
-    top: 16px;
-    right: 16px;
-    left: 16px;
-    gap: 12px;
-  }
-
-  .nav.sticky {
-    padding: 14px 16px;
-  }
-
-  .nav-links {
-    gap: 16px;
-  }
-
-  .nav-link {
-    font-size: 12px;
-  }
-
-  /* Hero */
-  .hero {
-    padding: 100px 20px 40px 20px;
-    min-height: 70vh;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .hero-name-row {
-    flex-direction: column;
-    align-items: flex-start;
+    right: 24px;
+    left: 24px;
     gap: 20px;
   }
 
-  .hero-polaroid {
-    width: 140px;
-    order: -1;
+  .nav.sticky {
+    padding: 18px 24px;
   }
 
-  .hero-polaroid img {
-    height: 130px;
+  .hero {
+    padding: 0 0 40px 40px;
   }
 
   .hero-headline {
-    font-size: clamp(48px, 14vw, 80px);
+    font-size: clamp(56px, 10vw, 100px);
+  }
+
+  .section {
+    grid-template-columns: 180px 1fr;
+    gap: 0 40px;
+    padding: 48px 40px;
+  }
+
+  .gallery-content {
+    grid-template-columns: 180px 1fr;
+    gap: 0 40px;
+    padding: 48px 40px 0 40px;
+  }
+
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .hobby-list {
+    padding: 24px 24px 40px 24px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .hobby-box {
+    gap: 20px;
+    padding: 20px 24px;
+  }
+
+  .hobby-img {
+    height: 90px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — Mobile (max 640px)
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+
+  /* ── Hide desktop nav, show hamburger ── */
+  .nav { display: none !important; }
+  .topbar { display: none; }
+  .mobile-menu-btn { display: flex; }
+
+  /* ── Card & layout ── */
+  .card {
+    margin: 0;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .gallery-section {
+    margin: 0 0 0 0;
+    border-radius: 0;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 60px 20px 32px 20px;
+    min-height: auto;
+    align-items: flex-start;
   }
 
   .hero-subheadline {
-    font-size: clamp(30px, 9vw, 56px);
+    font-size: clamp(28px, 8vw, 48px);
+    margin-bottom: 16px;
   }
 
-  .hero-tagline {
-    font-size: clamp(14px, 4vw, 20px);
+  .hero-name-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: nowrap;
+  }
+
+  .hero-polaroid {
+    width: 110px;
+    flex-shrink: 0;
+    transform: rotate(-2deg);
+  }
+
+  .hero-polaroid img {
+    height: 100px;
+  }
+
+  .hero-polaroid-caption {
+    font-size: 9px;
+    height: auto;
+    padding-top: 4px;
+  }
+
+  .hero-headline {
+    font-size: clamp(40px, 12vw, 64px);
+    line-height: 0.95;
+  }
+
+  .hero-credentials {
+    margin-top: 12px;
+    padding: 10px 14px;
+  }
+
+  .hero-tagline2 {
+    font-size: 12px;
+  }
+
+  .hero-tagline3 {
+    font-size: 10px;
   }
 
   .hero-globe {
-    display: none;
+    position: absolute;
+    right: -60px;
+    top: 40px;
+    width: 240px;
+    opacity: 0.18;
+    pointer-events: none;
   }
 
-  /* Thinking bar */
+  /* ── Stats / Banner section ── */
+  .banner-image {
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .stat-boxes {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 6px;
+    width: 100%;
+    justify-content: space-between;
+    order: 1;
+  }
+
+  .stat-box {
+    flex: 1;
+    min-width: 0;
+    padding: 8px 4px;
+    border-radius: 8px;
+  }
+
+  .stat-value {
+    font-size: 18px;
+  }
+
+  .stat-label {
+    font-size: 8px;
+    text-align: center;
+  }
+
+  .recognition-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    order: 2;
+    width: 100%;
+  }
+
+  .recognition-box {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+  }
+
+  .recognition-label {
+    font-size: 9px;
+  }
+
+  .recognition-content {
+    font-size: 14px;
+  }
+
+  /* Thinking bar last */
   .thinking-bar {
+    order: 3;
     position: relative;
     top: auto;
     bottom: auto;
     left: auto;
     right: auto;
-    margin: 12px;
+    margin: 0;
     padding: 16px 20px;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
     border-radius: 12px;
+    display: flex;
   }
 
   .thinking-bar:hover {
@@ -1704,72 +1911,216 @@ ul.entry-desc li {
   }
 
   .thinking-label {
-    font-size: 16px;
+    font-size: 14px;
+    white-space: normal;
   }
 
   .thinking-typed {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .thinking-cursor {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .thinking-cta {
     display: none;
   }
 
-  /* Sections */
+  /* ── About Me ── */
   .section {
     grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 32px 20px;
+    gap: 0;
+    padding: 32px 16px;
   }
 
   .section-label {
     font-size: 10px;
+    margin-bottom: 16px;
   }
 
-  .divider {
-    margin: 0 12px;
-  }
-
-  /* Gallery */
-  .gallery-content {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 32px 20px 0 20px;
-  }
-
-  .gallery-label {
+  /* Hide polaroid clusters in about me — replaced by grid below */
+  .polaroid-cluster {
     display: none;
   }
 
+  /* About me text first */
+  .section-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #aboutme .section-content {
+    flex-direction: column;
+  }
+
+  #aboutme .thesis-block {
+    order: 1;
+    margin-bottom: 24px;
+  }
+
+  /* Scatter photos as 2-column grid */
+  .photo-scatter {
+    order: 2;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    position: static !important;
+    width: 100%;
+    height: auto !important;
+  }
+
+  .scatter-photo {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
+    background: #fff;
+    padding: 6px 6px 24px 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .scatter-photo img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .scatter-caption {
+    font-size: 9px;
+    text-align: center;
+    padding-top: 4px;
+    color: #333;
+  }
+
+  /* ── Polaroids in sections — contained, no overflow ── */
+  .projects-polaroids,
+  .experiences-polaroids,
+  .startup-polaroids,
+  .awards-polaroids {
+    position: static !important;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    overflow: visible;
+    margin-bottom: 16px;
+    justify-content: center;
+  }
+
+  .polaroid,
+  .proj-polaroid-back,
+  .proj-polaroid-middle,
+  .proj-polaroid-front {
+    position: static !important;
+    transform: rotate(-2deg) !important;
+    width: 80px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .polaroid:nth-child(2) {
+    transform: rotate(1deg) !important;
+  }
+
+  .polaroid:nth-child(3) {
+    transform: rotate(-1deg) !important;
+  }
+
+  .polaroid img {
+    width: 100% !important;
+    height: 70px !important;
+    object-fit: cover;
+  }
+
+  .polaroid-caption {
+    font-size: 7px !important;
+    padding: 2px 2px 4px 2px;
+  }
+
+  /* Section label + polaroids stacked */
+  .section-label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* ── Projects & Experiences — one per row ── */
+  .entry-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px 0;
+  }
+
+  .entry-left {
+    width: 100%;
+  }
+
+  .entry-right {
+    width: 100%;
+  }
+
+  .entry-title {
+    font-size: 18px;
+  }
+
+  .entry-skill-tags {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .entry-skill-tags span {
+    font-size: 9px;
+    padding: 2px 8px;
+  }
+
+  /* Search bar stays above entries */
+  .projects-search-wrap {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 16px;
+  }
+
+  /* ── Gallery ── */
+  .gallery-content {
+    grid-template-columns: 1fr;
+    padding: 24px 16px 0 16px;
+  }
+
+  .gallery-label {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
   .gallery-intro {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .gallery-sub {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .gallery-tagline-box {
-    padding: 10px 20px;
+    padding: 10px 16px;
   }
 
-  /* Hobby boxes — stack vertically on mobile */
   .hobby-list {
-    padding: 16px 12px 32px 12px;
+    padding: 12px 12px 24px 12px;
     width: 100%;
     margin: 0;
-    gap: 12px;
   }
 
   .hobby-box {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
-    padding: 16px 16px;
+    gap: 10px;
+    padding: 14px 14px;
   }
 
   .hobby-left {
@@ -1783,39 +2134,35 @@ ul.entry-desc li {
   .hobby-images {
     width: 100%;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     gap: 8px;
   }
 
   .hobby-img {
-    flex: 0 0 120px;
-    height: 80px;
+    flex: 0 0 100px;
+    height: 70px;
   }
 
-  /* Entries */
-  .entry {
-    grid-template-columns: 1fr;
-    gap: 12px;
+  /* ── Parallax off on mobile ── */
+  .gallery-parallax-bg {
+    background-attachment: scroll;
   }
 
-  .entry-skill-tags {
-    flex-wrap: wrap;
-  }
-
-  /* Lightbox nav easier to tap on mobile */
+  /* ── Lightbox ── */
   .lightbox-nav {
     font-size: 48px;
-    padding: 0 16px;
+    padding: 0 12px;
   }
 
   .lightbox-close {
-    top: 20px;
-    right: 20px;
-    font-size: 22px;
+    top: 16px;
+    right: 16px;
+    font-size: 20px;
   }
 
-  /* Loader */
+  /* ── Loader ── */
   .loader-belief {
-    font-size: clamp(14px, 5vw, 22px);
+    font-size: clamp(13px, 4.5vw, 20px);
     white-space: normal;
   }
 
@@ -1823,14 +2170,9 @@ ul.entry-desc li {
     padding: 0 24px;
   }
 
-  /* Parallax disabled on mobile (poor performance) */
-  .gallery-parallax-bg {
-    background-attachment: scroll;
-  }
-
-  /* Form */
-  .form-row {
-    grid-template-columns: 1fr;
+  /* ── Divider ── */
+  .divider {
+    margin: 0 16px;
   }
 }
 
