@@ -123,7 +123,7 @@ body {
   border-top-right-radius: 24px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  overflow: visible;
+  overflow: hidden;
   position: relative;
   z-index: 2;
 }
@@ -753,6 +753,7 @@ body {
 .thesis-block {
   flex: 1;
   min-width: 0;
+  padding-top: 0;
 }
 
 /* ── Polaroid Photos ──────────────────────────────────────────── */
@@ -790,22 +791,6 @@ body {
   letter-spacing: normal;
   font-style: normal;
   padding-top: 4px;
-}
-
-/* Bottom photo — tilted left, sits behind */
-.polaroid-back {
-  bottom: -40px;
-  left: -20px;
-  transform: rotate(-4deg);
-  z-index: 1;
-}
-
-/* Top photo — tilted right, overlaps bottom-right corner of back */
-.polaroid-front {
-  bottom: 70px;
-  left: 120px;
-  transform: rotate(3.5deg);
-  z-index: 2;
 }
 
 .polaroid:hover {
@@ -860,7 +845,7 @@ body {
   position: relative;
   width: 100%;
   height: 280px;
-  margin-top: 0px;
+  margin-top: 40px;
 }
 
 .scatter-photo {
@@ -906,37 +891,53 @@ body {
   width: 266px;
 }
 
+/* Bottom photo — tilted left, sits behind */
+.polaroid-back {
+  bottom: -40px;
+  left: -20px;
+  transform: rotate(-4deg);
+  z-index: 1;
+}
+
+/* Top photo — tilted right, overlaps bottom-right corner of back */
+.polaroid-front {
+  bottom: 70px;
+  left: 120px;
+  transform: rotate(3.5deg);
+  z-index: 2;
+}
+
 .sp-1 {
   top: -20px;
-  left: 70px;
+  left: 10px;
   transform: rotate(10deg);
   z-index: 2;
 }
 
 .sp-2 {
   top: -40px;
-  left: 285px;
+  left: 225px;
   transform: rotate(-10deg);
   z-index: 1;
 }
 
 .sp-3 {
   top: -30px;
-  left: 537px;
+  left: 477px;
   transform: rotate(3deg);
   z-index: 2;
 }
 
 .sp-4 {
   top: -60px;
-  left: 745px;
+  left: 685px;
   transform: rotate(-5deg);
   z-index: 1;
 }
 
 .sp-5 {
   top: -30px;
-  left: 1000px;
+  left: 940px;
   transform: rotate(4deg);
   z-index: 2;
 }
@@ -1291,71 +1292,6 @@ ul.entry-desc li {
   max-width: 680px;
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.form-input,
-.form-textarea {
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 14px 16px;
-  font-size: 14px;
-  font-family: var(--font-body);
-  color: var(--text-light);
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.form-input:focus,
-.form-textarea:focus {
-  border-color: var(--text-light);
-}
-
-.form-input::placeholder,
-.form-textarea::placeholder {
-  color: var(--text-light);
-}
-
-.form-textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-btn {
-  align-self: flex-start;
-  background: var(--text-light);
-  color: var(--bg-card);
-  border: none;
-  border-radius: 4px;
-  padding: 14px 32px;
-  font-size: 13px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  font-family: var(--font-body);
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.form-btn:hover {
-  opacity: 0.75;
-}
-
-.form-status {
-  font-size: 13px;
-  color: var(--text-muted);
-  min-height: 20px;
-}
-
 /* ── Loading Screen ───────────────────────────────────────────── */
 .loader {
   position: fixed;
@@ -1490,127 +1426,16 @@ ul.entry-desc li {
   transition: width linear;
 }
 
-/* ══════════════════════════════════════════════════════════════
-   RESPONSIVE — Tablet (max 1024px)
-   ══════════════════════════════════════════════════════════════ */
-@media (max-width: 1024px) {
-  .card {
-    margin: 0 24px 0 24px;
-  }
 
-  .gallery-section {
-    margin: 0 24px 24px 24px;
-  }
-
-  .topbar {
-    padding: 14px 24px;
-  }
-
-  .nav {
-    right: 24px;
-    left: 24px;
-    gap: 20px;
-  }
-
-  .nav.sticky {
-    padding: 18px 24px;
-  }
-
-  .hero {
-    padding: 0 0 40px 40px;
-  }
-
-  .hero-headline {
-    font-size: clamp(56px, 10vw, 100px);
-  }
-
-  .hero-globe {
-    right: -80px;
-    width: 65%;
-    opacity: 0.3;
-  }
-
-  .section {
-    grid-template-columns: 180px 1fr;
-    gap: 0 40px;
-    padding: 48px 40px;
-  }
-
-  .gallery-content {
-    grid-template-columns: 180px 1fr;
-    gap: 0 40px;
-    padding: 48px 40px 0 40px;
-  }
-
-  .thinking-bar {
-    top: 200px;
-    padding: 20px 40px;
-  }
-
-  .thinking-label {
-    font-size: 22px;
-  }
-
-  .thinking-typed {
-    font-size: 22px;
-  }
-
-  .thinking-cursor {
-    font-size: 22px;
-  }
-
-  .thinking-cta {
-    right: 40px;
-  }
-
-  .entry {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .hero-polaroid {
-    width: 170px;
-  }
-
-  .hero-polaroid img {
-    height: 160px;
-  }
-
-  .hobby-list {
-    padding: 24px 24px 40px 24px;
-    width: 100%;
-    margin: 0;
-  }
-
-  .hobby-box {
-    gap: 20px;
-    padding: 20px 24px;
-  }
-
-  .hobby-img {
-    height: 90px;
-  }
-
-  .gallery-intro {
-    font-size: 20px;
-  }
-
-  .gallery-sub {
-    font-size: 24px;
-  }
-}
 
 /* ══════════════════════════════════════════════════════════════
-   RESPONSIVE — Mobile (max 640px)
-   ══════════════════════════════════════════════════════════════ */
-/* ══════════════════════════════════════════════════════════════
-   MOBILE HAMBURGER NAV
+   MOBILE NAV — shown only on ≤480px
    ══════════════════════════════════════════════════════════════ */
 .mobile-menu-btn {
   display: none;
-  position: fixed;
-  top: 16px;
-  right: 16px;
+  position: relative;
+  top: 0px;
+  right: 10px;
   z-index: 9999;
   width: 44px;
   height: 44px;
@@ -1636,21 +1461,24 @@ ul.entry-desc li {
   transition: all 0.3s ease;
 }
 
-.mobile-menu-btn.open span:nth-child(1) {
-  transform: translateY(6.5px) rotate(45deg);
+.nav.sticky .mobile-nav-dropdown {
+  top: 100%;
+  right: 33px;
 }
-.mobile-menu-btn.open span:nth-child(2) {
-  opacity: 0;
+
+.nav {
+  top: 20px;
 }
-.mobile-menu-btn.open span:nth-child(3) {
-  transform: translateY(-6.5px) rotate(-45deg);
-}
+
+.mobile-menu-btn.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.mobile-menu-btn.open span:nth-child(2) { opacity: 0; }
+.mobile-menu-btn.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 .mobile-nav-dropdown {
   display: none;
-  position: fixed;
-  top: 68px;
-  right: 16px;
+  position: absolute;
+  top: 50px;
+  right: 10px;
   z-index: 9998;
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(16px);
@@ -1662,9 +1490,7 @@ ul.entry-desc li {
   flex-direction: column;
 }
 
-.mobile-nav-dropdown.open {
-  display: flex;
-}
+.mobile-nav-dropdown.open { display: flex; }
 
 .mobile-nav-dropdown a {
   padding: 12px 20px;
@@ -1676,541 +1502,11 @@ ul.entry-desc li {
   transition: background 0.15s;
 }
 
-.mobile-nav-dropdown a:hover {
-  background: rgba(0,0,0,0.04);
-}
+.mobile-nav-dropdown a:hover { background: rgba(0,0,0,0.04); }
 
 /* ══════════════════════════════════════════════════════════════
-   RESPONSIVE — Tablet (max 1024px)
+   GALLERY SECTION (base — used on all sizes)
    ══════════════════════════════════════════════════════════════ */
-@media (max-width: 1024px) {
-  .card {
-    margin: 0 24px 0 24px;
-  }
-
-  .gallery-section {
-    margin: 0 24px 24px 24px;
-  }
-
-  .topbar {
-    padding: 14px 24px;
-  }
-
-  .nav {
-    right: 24px;
-    left: 24px;
-    gap: 20px;
-  }
-
-  .nav.sticky {
-    padding: 18px 24px;
-  }
-
-  .hero {
-    padding: 0 0 40px 40px;
-  }
-
-  .hero-headline {
-    font-size: clamp(56px, 10vw, 100px);
-  }
-
-  .section {
-    grid-template-columns: 180px 1fr;
-    gap: 0 40px;
-    padding: 48px 40px;
-  }
-
-  .gallery-content {
-    grid-template-columns: 180px 1fr;
-    gap: 0 40px;
-    padding: 48px 40px 0 40px;
-  }
-
-  .entry {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .hobby-list {
-    padding: 24px 24px 40px 24px;
-    width: 100%;
-    margin: 0;
-  }
-
-  .hobby-box {
-    gap: 20px;
-    padding: 20px 24px;
-  }
-
-  .hobby-img {
-    height: 90px;
-  }
-}
-
-/* ══════════════════════════════════════════════════════════════
-   RESPONSIVE — Mobile (max 640px)
-   ══════════════════════════════════════════════════════════════ */
-@media (max-width: 640px) {
-
-  /* ── Hide desktop nav, show hamburger ── */
-  .nav { display: none !important; }
-  .topbar { display: none; }
-  .mobile-menu-btn { display: flex; }
-
-  /* ── Card & layout ── */
-  .card {
-    margin: 0;
-    border-radius: 0;
-    overflow: visible;
-  }
-
-  .gallery-section {
-    margin: 0 0 0 0;
-    border-radius: 0;
-  }
-
-  /* ── Hero ── */
-  .hero {
-    padding: 60px 20px 32px 20px;
-    min-height: auto;
-    align-items: flex-start;
-  }
-
-  .hero-subheadline {
-    font-size: clamp(28px, 8vw, 48px);
-    margin-bottom: 16px;
-  }
-
-  .hero-name-row {
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: nowrap;
-  }
-
-  .hero-polaroid {
-    width: 110px;
-    flex-shrink: 0;
-    transform: rotate(-2deg);
-  }
-
-  .hero-polaroid img {
-    height: 100px;
-  }
-
-  .hero-polaroid-caption {
-    font-size: 9px;
-    height: auto;
-    padding-top: 4px;
-  }
-
-  .hero-headline {
-    font-size: clamp(40px, 12vw, 64px);
-    line-height: 0.95;
-  }
-
-  .hero-credentials {
-    margin-top: 12px;
-    padding: 10px 14px;
-  }
-
-  .hero-tagline2 {
-    font-size: 12px;
-  }
-
-  .hero-tagline3 {
-    font-size: 10px;
-  }
-
-  .hero-globe {
-    position: absolute;
-    right: -60px;
-    top: 40px;
-    width: 240px;
-    opacity: 0.18;
-    pointer-events: none;
-  }
-
-  /* ── Stats / Banner section ── */
-  .banner-image {
-    padding: 24px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .stat-boxes {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    gap: 6px;
-    width: 100%;
-    justify-content: space-between;
-    order: 1;
-  }
-
-  .stat-box {
-    flex: 1;
-    min-width: 0;
-    padding: 8px 4px;
-    border-radius: 8px;
-  }
-
-  .stat-value {
-    font-size: 18px;
-  }
-
-  .stat-label {
-    font-size: 8px;
-    text-align: center;
-  }
-
-  .recognition-boxes {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    order: 2;
-    width: 100%;
-  }
-
-  .recognition-box {
-    width: 100%;
-    padding: 12px 16px;
-    border-radius: 10px;
-  }
-
-  .recognition-label {
-    font-size: 9px;
-  }
-
-  .recognition-content {
-    font-size: 14px;
-  }
-
-  /* Thinking bar last */
-  .thinking-bar {
-    order: 3;
-    position: relative;
-    top: auto;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    margin: 0;
-    padding: 16px 20px;
-    flex-wrap: wrap;
-    gap: 6px;
-    border-radius: 12px;
-    display: flex;
-  }
-
-  .thinking-bar:hover {
-    top: auto;
-    bottom: auto;
-    left: auto;
-    right: auto;
-  }
-
-  .thinking-label {
-    font-size: 14px;
-    white-space: normal;
-  }
-
-  .thinking-typed {
-    font-size: 14px;
-  }
-
-  .thinking-cursor {
-    font-size: 14px;
-  }
-
-  .thinking-cta {
-    display: none;
-  }
-
-  /* ── About Me ── */
-  .section {
-    grid-template-columns: 1fr;
-    gap: 0;
-    padding: 32px 16px;
-  }
-
-  .section-label {
-    font-size: 10px;
-    margin-bottom: 16px;
-  }
-
-  /* Hide polaroid clusters in about me — replaced by grid below */
-  .polaroid-cluster {
-    display: none;
-  }
-
-  /* About me text first */
-  .section-content {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #aboutme .section-content {
-    flex-direction: column;
-  }
-
-  #aboutme .thesis-block {
-    order: 1;
-    margin-bottom: 24px;
-  }
-
-  /* Scatter photos as 2-column grid */
-  .photo-scatter {
-    order: 2;
-    display: grid !important;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    position: static !important;
-    width: 100%;
-    height: auto !important;
-  }
-
-  .scatter-photo {
-    position: static !important;
-    transform: none !important;
-    width: 100% !important;
-    height: auto !important;
-    background: #fff;
-    padding: 6px 6px 24px 6px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-
-  .scatter-photo img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    display: block;
-  }
-
-  .scatter-caption {
-    font-size: 9px;
-    text-align: center;
-    padding-top: 4px;
-    color: #333;
-  }
-
-  /* ── Polaroids in sections — contained, no overflow ── */
-  .projects-polaroids,
-  .experiences-polaroids,
-  .startup-polaroids,
-  .awards-polaroids {
-    position: static !important;
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    overflow: visible;
-    margin-bottom: 16px;
-    justify-content: center;
-  }
-
-  .polaroid,
-  .proj-polaroid-back,
-  .proj-polaroid-middle,
-  .proj-polaroid-front {
-    position: static !important;
-    transform: rotate(-2deg) !important;
-    width: 80px !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
-
-  .polaroid:nth-child(2) {
-    transform: rotate(1deg) !important;
-  }
-
-  .polaroid:nth-child(3) {
-    transform: rotate(-1deg) !important;
-  }
-
-  .polaroid img {
-    width: 100% !important;
-    height: 70px !important;
-    object-fit: cover;
-  }
-
-  .polaroid-caption {
-    font-size: 7px !important;
-    padding: 2px 2px 4px 2px;
-  }
-
-  /* Section label + polaroids stacked */
-  .section-label {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  /* ── Projects & Experiences — one per row ── */
-  .entry-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .entry {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 20px 0;
-  }
-
-  .entry-left {
-    width: 100%;
-  }
-
-  .entry-right {
-    width: 100%;
-  }
-
-  .entry-title {
-    font-size: 18px;
-  }
-
-  .entry-skill-tags {
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-
-  .entry-skill-tags span {
-    font-size: 9px;
-    padding: 2px 8px;
-  }
-
-  /* Search bar stays above entries */
-  .projects-search-wrap {
-    position: relative;
-    z-index: 10;
-    margin-bottom: 16px;
-  }
-
-  /* ── Gallery ── */
-  .gallery-content {
-    grid-template-columns: 1fr;
-    padding: 24px 16px 0 16px;
-  }
-
-  .gallery-label {
-    font-size: 10px;
-    margin-bottom: 8px;
-  }
-
-  .gallery-intro {
-    font-size: 14px;
-  }
-
-  .gallery-sub {
-    font-size: 18px;
-  }
-
-  .gallery-tagline-box {
-    padding: 10px 16px;
-  }
-
-  .hobby-list {
-    padding: 12px 12px 24px 12px;
-    width: 100%;
-    margin: 0;
-  }
-
-  .hobby-box {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 14px 14px;
-  }
-
-  .hobby-left {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    min-width: unset;
-  }
-
-  .hobby-images {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    gap: 8px;
-  }
-
-  .hobby-img {
-    flex: 0 0 100px;
-    height: 70px;
-  }
-
-  /* ── Parallax off on mobile ── */
-  .gallery-parallax-bg {
-    background-attachment: scroll;
-  }
-
-  /* ── Lightbox ── */
-  .lightbox-nav {
-    font-size: 48px;
-    padding: 0 12px;
-  }
-
-  .lightbox-close {
-    top: 16px;
-    right: 16px;
-    font-size: 20px;
-  }
-
-  /* ── Loader ── */
-  .loader-belief {
-    font-size: clamp(13px, 4.5vw, 20px);
-    white-space: normal;
-  }
-
-  .loader-inner {
-    padding: 0 24px;
-  }
-
-  /* ── Divider ── */
-  .divider {
-    margin: 0 16px;
-  }
-}
-
-/* ══════════════════════════════════════════════════════════════
-   RESPONSIVE — Large monitors (min 1440px)
-   ══════════════════════════════════════════════════════════════ */
-@media (min-width: 1440px) {
-  .card {
-    margin: 0 80px 0 80px;
-  }
-
-  .gallery-section {
-    margin: 0 80px 80px 80px;
-  }
-
-  .topbar {
-    padding: 16px 80px;
-  }
-
-  .nav {
-    right: 80px;
-    left: 80px;
-  }
-
-  .nav.sticky {
-    padding: 20px 80px;
-  }
-
-  .section {
-    padding: 72px 80px;
-  }
-
-  .gallery-content {
-    padding: 72px 80px 0 80px;
-  }
-}
-
-/* ── Gallery Section ──────────────────────────────────────────── */
 .gallery-section {
   position: relative;
   z-index: 1;
@@ -2239,6 +1535,8 @@ ul.entry-desc li {
   padding: 64px 60px 0 60px;
 }
 
+.gallery-label { color: #ffffff; }
+
 .gallery-body {
   display: flex;
   flex-direction: column;
@@ -2253,10 +1551,10 @@ ul.entry-desc li {
   gap: 0;
   width: 100%;
   padding: 12px 32px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255,255,255,0.12);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255,255,255,0.35);
   border-radius: 16px;
   margin-bottom: 32px;
   text-decoration: none;
@@ -2266,13 +1564,9 @@ ul.entry-desc li {
 
 .gallery-tagline-box:hover {
   transform: scale(1.025);
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.75);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.6),
-    0 0 20px rgba(255,255,255,0.25),
-    0 0 50px rgba(168,216,240,0.3),
-    0 12px 40px rgba(0,0,0,0.25);
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.75);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 0 20px rgba(255,255,255,0.25), 0 0 50px rgba(168,216,240,0.3), 0 12px 40px rgba(0,0,0,0.25);
 }
 
 .gallery-intro {
@@ -2296,69 +1590,15 @@ ul.entry-desc li {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 32px 12px 48px 12px;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.hobby-box {
-  width: 100%;
-  padding: 28px 36px;
-  border: 1.5px solid rgba(255, 255, 255, 0.75);
-  border-radius: 14px;
-  background: transparent;
-  color: #ffffff;
-  font-family: var(--font-body);
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.hobby-box:hover {
-  border-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 18px rgba(255,255,255,0.2), 0 0 40px rgba(168,216,240,0.2);
-  transform: scaleX(1.01);
-}
-
-/* ── Hobby Boxes ──────────────────────────────────────────────── */
-.hobby-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
   width: calc(100% - 100px);
-  margin: 0 50px;
-  padding-bottom: 48px;
+  margin: 32px 50px 48px 50px;
   box-sizing: border-box;
 }
 
-.hobby-box {
-  width: 100%;
-  padding: 28px 36px;
-  border: 1.5px solid rgba(255, 255, 255, 0.75);
-  border-radius: 14px;
-  background: transparent;
-  color: #ffffff;
-  font-family: var(--font-body);
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.hobby-box:hover {
-  border-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 18px rgba(255,255,255,0.2), 0 0 40px rgba(168,216,240,0.2);
-  transform: scaleX(1.01);
-}
-
-/* ── Hobby Box Layout ─────────────────────────────────────────── */
 .hobby-box {
   width: 100%;
   padding: 24px 28px;
-  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  border: 1.5px solid rgba(255,255,255,0.75);
   border-radius: 14px;
   background: transparent;
   box-sizing: border-box;
@@ -2369,7 +1609,7 @@ ul.entry-desc li {
 }
 
 .hobby-box:hover {
-  border-color: rgba(255, 255, 255, 1);
+  border-color: rgba(255,255,255,1);
   box-shadow: 0 0 18px rgba(255,255,255,0.15), 0 0 40px rgba(168,216,240,0.15);
 }
 
@@ -2414,14 +1654,8 @@ ul.entry-desc li {
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.view-all-btn:hover .view-all-arrow {
-  transform: translateX(6px);
-  color: #ffffff;
-}
-
-.view-all-btn:hover .view-all-text {
-  color: #ffffff;
-}
+.view-all-btn:hover .view-all-arrow { transform: translateX(6px); color: #ffffff; }
+.view-all-btn:hover .view-all-text { color: #ffffff; }
 
 .hobby-images {
   display: flex;
@@ -2439,37 +1673,32 @@ ul.entry-desc li {
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.hobby-img:hover {
-  opacity: 0.85;
-  transform: scale(1.03);
-}
+.hobby-img:hover { opacity: 0.85; transform: scale(1.03); }
 
-/* ── Lightbox ─────────────────────────────────────────────────── */
+/* ── Lightbox ── */
 .lightbox {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.95);
-  z-index: 9999;
+  background: rgba(0,0,0,0.95);
+  z-index: 99999;
   align-items: center;
   justify-content: center;
 }
 
-.lightbox.active {
-  display: flex;
-}
+.lightbox.active { display: flex; }
 
 .lightbox-img-wrap {
-  max-width: 90vw;
-  max-height: 90vh;
+  width: 80vw;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .lightbox-img-wrap img {
-  max-width: 90vw;
-  max-height: 90vh;
+  width: 80vw;
+  height: 80vh;
   border-radius: 8px;
   object-fit: contain;
 }
@@ -2484,14 +1713,13 @@ ul.entry-desc li {
   opacity: 0.6;
   transition: opacity 0.2s ease;
   line-height: 1;
+  z-index: 100000;
 }
 
-.lightbox-nav:hover {
-  opacity: 1;
-}
+.lightbox-nav:hover { opacity: 1; }
 
 .lightbox-close {
-  position: absolute;
+  position: fixed;
   top: 32px;
   right: 40px;
   background: none;
@@ -2501,14 +1729,13 @@ ul.entry-desc li {
   cursor: pointer;
   opacity: 0.6;
   transition: opacity 0.2s ease;
+  z-index: 100000;
 }
 
-.lightbox-close:hover {
-  opacity: 1;
-}
+.lightbox-close:hover { opacity: 1; }
 
 .lightbox-counter {
-  position: absolute;
+  position: fixed;
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
@@ -2516,4 +1743,517 @@ ul.entry-desc li {
   font-family: var(--font-body);
   font-size: 13px;
   letter-spacing: 0.08em;
+  z-index: 100000;
+}
+
+.lightbox-caption {
+  position: fixed;
+  bottom: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.75);
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  font-style: italic;
+  max-width: 600px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-caption.visible { opacity: 1; }
+
+/* Awards overlap fix */
+#awards {
+  overflow: visible;
+  position: relative;
+  z-index: 10;
+}
+
+#awards .projects-polaroids {
+  height: 620px;
+  margin-bottom: 0;
+}
+
+#awards .projects-polaroids .polaroid {
+  position: absolute;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   1200px — Wide laptop, minor tweaks
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 1200px) {
+  .card { margin: 0 48px; }
+  .gallery-section { margin: 0 48px 48px 48px; }
+  .topbar { padding: 14px 48px; }
+  .nav { right: 48px; left: 48px; }
+  .nav.sticky { padding: 18px 48px; }
+  .hero { padding: 0 0 48px 48px; }
+  .section { padding: 56px 48px; }
+  .gallery-content { padding: 56px 48px 0 48px; }
+  .divider { margin: 0 48px; }
+
+  .sp-3 { left: 500px; }
+  .sp-4 { left: 700px; }
+  .sp-5 { left: 940px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   1024px — Standard laptop, collapse some grids
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .card { margin: 0 32px; }
+  .gallery-section { margin: 0 32px 32px 32px; }
+  .topbar { padding: 14px 32px; }
+  .nav { right: 32px; left: 32px; }
+  .nav.sticky { padding: 18px 32px; }
+  .hero { padding: 0 0 40px 40px; }
+  .hero-headline { font-size: clamp(56px, 10vw, 100px); }
+  .hero-globe { right: -80px; width: 65%; opacity: 0.3; }
+
+  .section { grid-template-columns: 180px 1fr; gap: 0 40px; padding: 48px 32px; }
+  .gallery-content { grid-template-columns: 180px 1fr; gap: 0 40px; padding: 48px 32px 0 32px; }
+  .divider { margin: 0 32px; }
+
+  /* Banner */
+  .banner-image { height: 520px; }
+  .stat-boxes { top: 16px; left: 16px; right: 16px; gap: 10px; }
+  .stat-box { padding: 14px 8px; }
+  .stat-value { font-size: 20px; }
+  .stat-label { font-size: 10px; }
+  .recognition-boxes { top: 126px; left: 16px; right: 16px; gap: 10px; }
+  .recognition-box { padding: 14px 20px; }
+  .recognition-label { font-size: 10px; }
+  .recognition-content { font-size: 15px; }
+  .thinking-bar { top: 260px; bottom: 16px; left: 16px; right: 16px; padding: 20px 28px; flex-direction: column; align-items: flex-start; gap: 4px; }
+  .thinking-bar:hover { top: 252px; bottom: 8px; left: 8px; right: 8px; }
+  .thinking-label { font-size: 18px; white-space: normal; }
+  .thinking-typed { font-size: 22px; }
+  .thinking-cursor { font-size: 22px; }
+  .thinking-cta { position: static; right: auto; top: auto; transform: none; width: 100%; margin-top: 10px; }
+  .thinking-cta-arrow { width: 120px; }
+  .thinking-cta-arrow svg { width: 120px; }
+  .thinking-cta-text { font-size: 14px; }
+
+  /* About me polaroid cluster — keep layout, reduce size */
+  .polaroid-cluster { width: 260px; min-width: 260px; height: 260px; }
+  .polaroid { width: 170px; }
+  .polaroid img { height: 130px; }
+  .polaroid-back { bottom: -30px; }
+  .polaroid-front { bottom: 50px; left: 90px; }
+
+  /* Project/section polaroids */
+  .projects-polaroids { width: 160px; min-width: 160px; height: 260px; }
+  .proj-polaroid-back { transform: rotate(-5deg); }
+  .proj-polaroid-front { top: 60px; left: 25px; }
+
+  /* Scatter photos */
+  .photo-scatter { height: 240px; }
+  .scatter-photo:not(.horizontal) img { width: 100px; height: 130px; }
+  .scatter-photo:not(.horizontal) { width: 116px; }
+  .scatter-photo.horizontal img { width: 150px; height: 100px; }
+  .scatter-photo.horizontal { width: 166px; }
+  .sp-1 { top: 20px; left: 0px; }
+  .sp-2 { top: 10px; left: 140px; }
+  .sp-3 { top: 20px; left: 310px; }
+  .sp-4 { top: 180px; left: 60px; }
+  .sp-5 { top: 160px; left: 240px; }
+
+  /* Entries */
+  .entry { grid-template-columns: 1fr; gap: 12px; }
+
+  /* Gallery */
+  .hobby-list { width: calc(100% - 64px); margin: 24px 32px 40px 32px; }
+  .hobby-img { height: 90px; }
+  .gallery-intro { font-size: 20px; }
+  .gallery-sub { font-size: 24px; }
+
+  /* Hero polaroid */
+  .hero-polaroid { width: 170px; }
+  .hero-polaroid img { height: 160px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   768px — Tablet/iPad, stack vertically
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .card { margin: 0 16px; border-radius: 16px 16px 0 0; }
+  .gallery-section { margin: 0 16px 16px 16px; border-radius: 10px; }
+  .topbar { padding: 12px 20px;}
+  .nav { right: 20px; left: 20px; }
+  .nav-links { gap: 20px; }
+  .nav-link { font-size: 12px; display: none !important;}
+  .nav.sticky { padding: 14px 20px; }
+  .hero { padding: 80px 20px 40px 20px; min-height: auto; }
+  .hero-headline { font-size: clamp(52px, 11vw, 90px); }
+  .hero-globe { right: -60px; width: 55%; opacity: 0.25; }
+  .hero-polaroid { width: 150px; }
+  .hero-polaroid img { height: 140px; }
+  .divider { margin: 0 16px; }
+  .mobile-menu-btn { display: flex; }
+
+  .section { grid-template-columns: 1fr; gap: 16px; padding: 40px 24px; }
+  .gallery-content { grid-template-columns: 1fr; padding: 40px 24px 0 24px; }
+
+  /* Banner — static flow */
+  .banner-image {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 16px;
+    background-attachment: scroll;
+  }
+  .stat-boxes { position: static; display: flex; flex-wrap: nowrap; gap: 8px; }
+  .stat-box { padding: 12px 6px; border-radius: 10px; }
+  .stat-value { font-size: 18px; }
+  .stat-label { font-size: 9px; }
+  .recognition-boxes { position: static; display: flex; flex-direction: column; gap: 8px; }
+  .recognition-box { padding: 12px 16px; }
+  .recognition-label { font-size: 9px; }
+  .recognition-content { font-size: 14px; }
+  .thinking-bar {
+    position: static;
+    top: auto; bottom: auto; left: auto; right: auto;
+    padding: 16px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    border-radius: 12px;
+    margin: 0;
+  }
+  .thinking-bar:hover { top: auto; bottom: auto; left: auto; right: auto; }
+  .thinking-label { font-size: 14px; white-space: normal; }
+  .thinking-typed { font-size: 14px; }
+  .thinking-cursor { font-size: 14px; }
+  .thinking-cta { position: static; right: auto; top: auto; transform: none; width: 100%; margin-top: 8px; }
+  .thinking-cta-arrow { width: 70px; }
+  .thinking-cta-arrow svg { width: 70px; }
+  .thinking-cta-text { font-size: 10px; }
+
+  /* About me — keep polaroid cluster beside text at tablet */
+  #aboutme .section-content { flex-direction: row; align-items: flex-start; gap: 32px; }
+  .polaroid-cluster { width: 200px; min-width: 200px; height: 200px; }
+  .polaroid { width: 140px; }
+  .polaroid img { height: 105px; }
+  .polaroid-back { bottom: -24px; }
+  .polaroid-front { bottom: 40px; left: 70px; }
+
+  /* Scatter photos — tighter */
+  .photo-scatter { height: 200px; }
+  .scatter-photo:not(.horizontal) img { width: 80px; height: 100px; }
+  .scatter-photo:not(.horizontal) { width: 96px; }
+  .scatter-photo.horizontal img { width: 110px; height: 80px; }
+  .scatter-photo.horizontal { width: 126px; }
+  .sp-1 { top: 10px; left: 0; }
+  .sp-2 { top: 5px; left: 110px; }
+  .sp-3 { top: 10px; left: 250px; }
+  .sp-4 { top: 140px; left: 50px; }
+  .sp-5 { top: 120px; left: 200px; }
+
+  /* Section polaroids — keep scattered in section-label */
+  .projects-polaroids { width: 140px; min-width: 140px; height: 230px; }
+  .proj-polaroid-back { transform: rotate(-5deg); }
+  .proj-polaroid-front { top: 55px; left: 20px; }
+
+  .entry { grid-template-columns: 1fr; gap: 12px; }
+  .entry-grid { grid-template-columns: 1fr; }
+
+  /* Gallery */
+  .hobby-list { width: calc(100% - 32px); margin: 20px 16px 32px 16px; gap: 12px; }
+  .hobby-img { height: 80px; }
+  .gallery-intro { font-size: 17px; }
+  .gallery-sub { font-size: 22px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   480px — Large phone
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  /* Show hamburger, hide desktop nav and topbar */
+  .nav { display: none !important; }
+  .topbar { display: none; }
+  .mobile-menu-btn { display: flex; }
+
+  .card { margin: 0; border-radius: 0; overflow: visible; }
+  .gallery-section { margin: 0; border-radius: 0; min-height: auto; }
+  .divider { margin: 0 16px; }
+
+  /* Hero */
+  .hero { padding: 64px 16px 28px 16px; min-height: auto; align-items: flex-start; }
+  .hero-subheadline { font-size: clamp(26px, 7vw, 40px); margin-bottom: 12px; }
+  .hero-name-row { flex-direction: row; align-items: center; gap: 12px; flex-wrap: nowrap; }
+  .hero-polaroid { width: 100px; flex-shrink: 0; transform: rotate(-2deg); }
+  .hero-polaroid img { height: 90px; }
+  .hero-polaroid-caption { font-size: 8px; height: auto; padding-top: 4px; }
+  .hero-headline { font-size: clamp(38px, 11vw, 58px); line-height: 0.92; }
+  .hero-credentials { margin-top: 10px; padding: 8px 12px; }
+  .hero-tagline2 { font-size: 11px; line-height: 1.2; }
+  .hero-tagline3 { font-size: 9px; line-height: 1.2; }
+  .hero-globe { position: absolute; right: -50px; top: 30px; width: 200px; opacity: 0.15; pointer-events: none; }
+
+  /* Banner — flex column, no absolute positioning */
+  .banner-image {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 12px;
+    background-attachment: scroll;
+  }
+  .stat-boxes { position: static; display: flex; flex-wrap: nowrap; gap: 5px; }
+  .stat-box { flex: 1; min-width: 0; padding: 8px 3px; border-radius: 8px; }
+  .stat-value { font-size: 16px; }
+  .stat-label { font-size: 7.5px; text-align: center; }
+  .recognition-boxes { position: static; display: flex; flex-direction: column; gap: 7px; }
+  .recognition-box { width: 100%; padding: 10px 14px; border-radius: 10px; }
+  .recognition-label { font-size: 8px; }
+  .recognition-content { font-size: 13px; }
+
+  /* Thinking bar — row layout with CTA on the right */
+  .thinking-bar {
+    position: static;
+    top: auto; bottom: auto; left: auto; right: auto;
+    padding: 14px 16px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 10px;
+    border-radius: 10px;
+    margin: 0;
+  }
+  .thinking-bar:hover { top: auto; bottom: auto; left: auto; right: auto; }
+
+  /* Left side — label + typed word stacked */
+  .thinking-label { font-size: 16px; white-space: normal; flex-shrink: 1; }
+  .thinking-typed { font-size: 16px; }
+  .thinking-cursor { font-size: 16px; }
+
+  /* Right side — CTA */
+  .thinking-cta {
+    display: flex;
+    position: static;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: auto;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .thinking-cta-text { font-size: 15px; white-space: nowrap; }
+  .thinking-cta-arrow { width: 100px; }
+  .thinking-cta-arrow svg { width: 100px; }
+
+  /* About me — text first, then photos below in 2-col grid */
+  .section { grid-template-columns: 1fr; gap: 0; padding: 28px 16px; }
+  .section-label { font-size: 10px; margin-bottom: 14px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+  .section-content { display: flex; flex-direction: column; }
+  #aboutme .section-content { flex-direction: column; }
+  #aboutme .thesis-block { order: 1; margin-bottom: 20px; }
+  .polaroid-cluster { display: none; }
+
+  .photo-scatter {
+    order: 2;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    position: static !important;
+    width: 100%;
+    height: auto !important;
+  }
+  .scatter-photo {
+    position: static !important;
+    transform: rotate(-1.5deg) !important;
+    width: 100% !important;
+    height: auto !important;
+    background: #fff;
+    padding: 5px 5px 22px 5px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+  }
+  .scatter-photo:nth-child(even) { transform: rotate(1.5deg) !important; }
+  .scatter-photo img { width: 100%; height: 90px; object-fit: cover; display: block; }
+  .scatter-caption { font-size: 3px; text-align: center; padding-top: 3px; color: #333; height: auto; }
+
+  /* Section polaroids — one row above search bar, scattered look */
+  .projects-polaroids,
+  .experiences-polaroids,
+  .startup-polaroids,
+  .awards-polaroids {
+    position: static !important;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    overflow: visible;
+    margin-bottom: 16px;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 130px;
+  }
+
+  .polaroid,
+  .proj-polaroid-back,
+  .proj-polaroid-middle,
+  .proj-polaroid-front {
+    position: relative !important;
+    width: calc(33% - 4px) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    padding: 5px 5px 28px 5px;
+  }
+  .proj-polaroid-back { transform: rotate(-3deg) !important; top: 0; }
+  .proj-polaroid-middle { transform: rotate(2deg) !important; top: -8px; }
+  .proj-polaroid-front { transform: rotate(-1.5deg) !important; top: -4px; }
+
+  .polaroid img,
+  .proj-polaroid-back img,
+  .proj-polaroid-middle img,
+  .proj-polaroid-front img {
+    width: 100% !important;
+    height: 72px !important;
+    object-fit: cover;
+  }
+  .polaroid-caption {
+    font-size: 5px !important;
+    height: auto !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+    padding: 2px 1px 0 1px;
+  }
+
+  /* Entries — single column, 20px inset */
+  .entry-list { display: flex; flex-direction: column; }
+  .entry-grid { grid-template-columns: 1fr; }
+  .entry { grid-template-columns: 1fr; gap: 8px; padding: 18px 0; }
+  .entry-title { font-size: 16px; }
+  .entry-skill-tags { flex-wrap: wrap; gap: 4px; }
+  .entry-skill-tags span { font-size: 9px; padding: 2px 7px; }
+  .projects-search-wrap { position: relative; z-index: 10; margin-bottom: 14px; }
+
+  /* Section content inset */
+  #projects .section-content,
+  #experiences .section-content,
+  #startup .section-content,
+  #awards .section-content {
+    padding: 0 4px;
+  }
+
+  /* Gallery */
+  .gallery-content { grid-template-columns: 1fr; padding: 20px 14px 0 14px; }
+  .gallery-label { font-size: 10px; margin-bottom: 6px; }
+  .gallery-intro { font-size: 14px; }
+  .gallery-sub { font-size: 17px; }
+  .gallery-tagline-box { padding: 9px 14px; }
+  .hobby-list { width: 100%; margin: 12px 0 24px 0; padding: 0 12px 0 12px; gap: 10px; }
+  .hobby-box { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px 12px; }
+  .hobby-left { flex-direction: row; align-items: center; justify-content: space-between; width: 100%; min-width: unset; }
+  .hobby-images { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; gap: 7px; }
+  .hobby-img { flex: 0 0 90px; height: 65px; }
+
+  /* Parallax off */
+  .gallery-parallax-bg { background-attachment: scroll; }
+
+  /* Lightbox */
+  .lightbox-nav { font-size: 44px; padding: 0 10px; }
+  .lightbox-close { top: 14px; right: 14px; font-size: 18px; }
+
+  /* Loader */
+  .loader-belief { font-size: clamp(12px, 4vw, 18px); white-space: normal; }
+  .loader-inner { padding: 0 20px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   375px — Small phone, minimum sizes
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 375px) {
+  .hero { padding: 56px 12px 24px 12px; }
+  .hero-polaroid { width: 86px; }
+  .hero-polaroid img { height: 78px; }
+  .hero-headline { font-size: clamp(34px, 10.5vw, 48px); }
+  .hero-subheadline { font-size: clamp(22px, 6.5vw, 34px); }
+  .hero-credentials { padding: 7px 10px; }
+  .hero-tagline2 { font-size: 10px; }
+  .hero-tagline3 { font-size: 8px; }
+
+  .stat-value { font-size: 14px; }
+  .stat-label { font-size: 6.5px; }
+  .recognition-content { font-size: 12px; }
+
+  .section { padding: 22px 12px; }
+  .entry-title { font-size: 15px; }
+  .entry-tag { font-size: 10px; }
+
+  .polaroid,
+  .proj-polaroid-back,
+  .proj-polaroid-middle,
+  .proj-polaroid-front {
+    width: calc(33% - 3px) !important;
+  }
+  .polaroid-cluster { display: none; }
+  .polaroid img,
+  .proj-polaroid-back img,
+  .proj-polaroid-middle img,
+  .proj-polaroid-front img {
+    height: 60px !important;
+  }
+  .polaroid-caption { font-size: 6px !important; }
+
+  .scatter-photo img { height: 76px; }
+  .scatter-caption { font-size: 7.5px; }
+
+  .hobby-img { flex: 0 0 78px; height: 56px; }
+  .hobby-title { font-size: 14px; }
+  .gallery-intro { font-size: 12px; }
+  .gallery-sub { font-size: 15px; }
+
+  .loader-belief { font-size: clamp(11px, 3.8vw, 16px); }
+  .thinking-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+
+  .thinking-cta {
+    position: static;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .thinking-cta-text {
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
+  .thinking-cta-arrow {
+    width: 100px;
+  }
+
+  .thinking-cta-arrow svg {
+    width: 100px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   1440px+ — Large monitors
+   ══════════════════════════════════════════════════════════════ */
+@media (min-width: 1440px) {
+  .card { margin: 0 80px; }
+  .gallery-section { margin: 0 80px 80px 80px; }
+  .topbar { padding: 16px 80px; }
+  .nav { right: 80px; left: 80px; }
+  .nav.sticky { padding: 20px 80px; }
+  .section { padding: 72px 80px; }
+  .gallery-content { padding: 72px 80px 0 80px; }
+  .divider { margin: 0 80px; }
 }

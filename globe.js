@@ -79,7 +79,7 @@
     { idx: 3,  label: "Design"    },
     { idx: 5,  label: "Systems"   },
     { idx: 7,  label: "Code"      },
-    { idx: 8,  label: "Strategy"  },
+    { idx: 8,  label: "Identity"  },
     { idx: 10, label: "Research"  },
     { idx: 11, label: "Product"   },
   ];
