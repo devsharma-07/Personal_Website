@@ -578,7 +578,7 @@ body {
 .banner-image {
   width: 100%;
   height: 420px;
-  background: url('Background.jpg') center center / cover no-repeat;
+  background: url('/Background.jpg') center center / cover no-repeat;
   background-attachment: fixed;
   position: relative;
   z-index: 2;
