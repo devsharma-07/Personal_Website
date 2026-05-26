@@ -1,6 +1,12 @@
 # Dev's Portfolio Website
 
-A clean, minimal professional website with animated geodesic globe, hover interactions, and a serverless contact form — ready to deploy on Vercel.
+In 7 days, I cocA clean, minimal professional website with animated geodesic globe, hover interactions, and a serverless contact form — ready to deploy on Vercel.
+
+In 7 days, I coded, debugged, and prompt engineered a website that consolidated my diverse interests and experiences under one motto: connecting the world with unconventional, human-centered ideas. 
+
+From brushing up on HTML, JavaScript, and CSS to experimenting with UX animations and dissecting overrides or errors in prompt-engineered code, I began to have fun with every second of the trial-and-error process. I learned a lot more of JavaScript, how files collaborate in real-time, and where to make small changes that greatly impact user experience.
+
+I am regularly working on new updates, interface bugs, and cross-device compatability.
 
 ---
 
@@ -8,60 +14,9 @@ A clean, minimal professional website with animated geodesic globe, hover intera
 
 ```
 Personal_Website
-├── index.html          # Main page
-├── style.css           # All styles
-├── globe.js            # Animated rotating wireframe globe (Canvas 2D)
-├── interactions.js     # Hover effects + contact form submission
+├── index.html          # Page HTML Layout
+├── style.css           # UX Interface Design
+├── globe.js            # Rotating 2D Globe Animation (Landing Page)
+├── interactions.js     # Hover & Motion Effects
 └── README.md
 ```
-
----
-
-## Deploy to Vercel
-
-### Option 1 — Via GitHub (recommended)
-
-1. Push this folder to a GitHub repository.
-2. Go to [vercel.com](https://vercel.com) → **Add New Project**
-3. Import your GitHub repo
-4. Click **Deploy** — no build config needed
-
-### Option 2 — Vercel CLI
-
-```bash
-npm install -g vercel
-cd awright-associates
-vercel
-```
-
----
-
-## Local Development
-
-```bash
-npm install -g vercel
-vercel dev
-```
-
-Then open `http://localhost:3000`
-
----
-
-## Contact Form (Optional Email)
-
-The contact form POSTs to `/api/contact`. By default it logs submissions to the console.
-
-To send real emails via [Resend](https://resend.com):
-
-1. Sign up at resend.com and get an API key
-2. Add `RESEND_API_KEY` to your Vercel environment variables
-3. Uncomment the Resend block in `api/contact.js`
-
----
-
-## Customization
-
-- **Content**: Edit `index.html` — all copy is inline
-- **Colors**: Edit CSS variables at the top of `style.css`
-- **Globe speed**: Change `angleY += 0.0025` in `globe.js`
-- **Globe detail**: Change `createIcosphere(2)` subdivision level (1–4)
