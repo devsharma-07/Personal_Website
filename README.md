@@ -12,10 +12,6 @@ Personal_Website
 ├── style.css           # All styles
 ├── globe.js            # Animated rotating wireframe globe (Canvas 2D)
 ├── interactions.js     # Hover effects + contact form submission
-├── api/
-│   └── contact.js      # Vercel serverless function (contact form backend)
-├── vercel.json         # Vercel deployment config
-├── package.json
 └── README.md
 ```
 
