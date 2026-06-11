@@ -6,7 +6,7 @@ From brushing up on HTML, JavaScript, and CSS to experimenting with UX animation
 
 I am regularly working on new updates, interface bugs, and cross-device compatability.
 
-Check it out at devsharma.vercel.app!
+Check it out at **devsharma.vercel.app!**
 
 ---
 
